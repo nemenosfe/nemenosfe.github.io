@@ -14,13 +14,13 @@ angular.module('userCtrl', [])
 
     vm.threads = function(id) {
         return $http.get('https://still-earth-13848.herokuapp.com/api/threads/' + id);
-    }
+    };
 
     vm.submissions = function(id) {
         return $http.get('https://still-earth-13848.herokuapp.com/api/users/' + id + '/submissions');
-    }
+    };
 
     vm.comments = function(id) {
         return $http.get('https://still-earth-13848.herokuapp.com/api/users/' + id + '/comments');
-    }
+    };
 });
