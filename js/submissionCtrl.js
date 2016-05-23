@@ -13,10 +13,8 @@ angular.module('submissionCtrl', [])
     };
 
     vm.new = function(title, text, url) {
-        //if(!title)
         if(!text) return $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + title + '&url' + url);
         else if(!url) return $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + title + '&text' + text);
-        //else return error;
     };
 
     vm.like = function(id) {
@@ -24,6 +22,6 @@ angular.module('submissionCtrl', [])
     };
 
     vm.ask = function() {
-        return $http.get('https://still-earth-13848.herokuapp.com/api/ask')
+        return $http.get('https://still-earth-13848.herokuapp.com/api/ask');
     };
 });
