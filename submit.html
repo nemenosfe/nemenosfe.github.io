@@ -14,30 +14,48 @@
 
 </head>
 <body>
+  <header class="navbar navbar-default">
+    <div class="container-fluid navbar-left">
+      <a class="navbar-brand" href="index.html"><img src="images/logoJ.png"></a>
+      <a class="navbar-brand" href="Submit.html"> Submit </a> <!-- posar a la dreta de lo taronja -->
+    </div>
+  </header>
+
     <div class="container container-main">
         <div>
             <form id="formulariSubmission">
-                <table class="tabFormSubmission" border="0">
-                    <tr>
-                        <td> title </td>
-                        <td> <input type="text" name="title"> </td>
+                <table class="table borderless" border="0">
+                    <tr class="borderless">
+                        <td class="borderless"> title </td>
+                        <td class="borderless"> <input type="text" name="title"> </td>
                     </tr>
                     <tr>
-                        <td> url </td>
-                        <td> <input type="text" name="title"> </td>
+                        <td class="borderless"> url </td>
+                        <td class="borderless"> <input type="text" name="title"> </td>
                     </tr>
                     <tr>
-                        <td class="Ha de ser en negreta i una miqueta mes gran"> or </td>
+                        <td class="borderless">  </td>
+                        <td class="borderless"> or </td>
                     </tr>
                     <tr>
-                        <td> text </td>
-                        <td> <textarea name="title"> </textarea> </td>
+                        <td class="borderless"> text </td>
+                        <td class="borderless"> <textarea name="title"> </textarea> </td>
                     </tr>
                     <tr>
-                        <td> <input type="submit" value="add submisson"></td>
+												<td class="borderless">  </td>
+                        <td class="borderless"> <button class="btn btn-default" type="submit" value="add submisson">Submit</button></td>
                     </tr>
                     <tr> <input type="hidden" name="submission_id" value="" > </tr>
+										<tr>
+											<td class="borderless"><input type="hidden" name="submission_id" value="" ></td>
+											<td class="borderless">
+												<h6> Leave url blank to submit a question for discussion. If there is no url, the text (if any) will appear at the top of the thread.
+												</h6>
+											</td>
+										</tr>
+
                 </table>
+
             </form>
         </div>
     </div>
