@@ -9,7 +9,7 @@
     <a class="navbar-brand" href="submit.html"> submit </a>
   </div>
   <div class="container-fluid navbar-right">
-    <p class="navbar-brand" onclick="login();"> login </p> <!-- posar a la dreta de lo taronja -->
+    <p class="navbar-brand" onclick="login()"> login </p> <!-- posar a la dreta de lo taronja -->
   </div>
 </header>
 <head ng-app="joox-angular">
@@ -29,14 +29,17 @@
 </head>
 <script>
   function login() {
+		console.log('lala')
     OAuth.initialize('jfL0GgqhhIFFFMLzoxYAFV0BYX8');
     OAuth.popup('twitter')
     .done(function(result) {
       //use result.access_token in your API request
       //or use result.get|post|put|del|patch|me methods (see below)
+			console.log(result)
     })
     .fail(function (err) {
       //handle error with err
+			console.log(err)
     });
   }
 </script>
