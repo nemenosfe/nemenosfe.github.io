@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html ng-app="">
 <header class="navbar navbar-default">
   <div class="container-fluid navbar-left">
     <a class="navbar-brand" href="index.html"><img src="images/logoJ.png"></img></a>
@@ -7,7 +9,7 @@
     <a class="navbar-brand" href="submit.html"> submit </a>
   </div>
   <div class="container-fluid navbar-right">
-    <a class="navbar-brand" onclick="login()"> login </a> <!-- posar a la dreta de lo taronja -->
+    <p class="navbar-brand" onclick="login();"> login </p> <!-- posar a la dreta de lo taronja -->
   </div>
 </header>
 <head ng-app="joox-angular">
@@ -23,7 +25,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
   <script src="js/app.js"></script>
 
-  <script src="/path/to/oauth.js"></script>
+  <script src="./js/oauth.js"></script>
 </head>
 <script>
   function login() {
@@ -38,3 +40,17 @@
     });
   }
 </script>
+
+<body>
+	<div class="container container-main">
+
+		<div ng-view></div>
+
+	    <footer id="footer" role="contentinfo">
+	      <hr class="hr hrfooter">
+	      <p class="copyright text-center">Xavier Algarra | Octavi Prats | Jaume Lladó | Oscar Serrano
+				<p class="copyright text-center">&copy; 2016 Joox News | All Rights Reserved
+	  	</footer>
+	</div>
+</body>
+</html>
