@@ -6,7 +6,8 @@ angular.module('joox-news', ['ngRoute'])
 
 		// route for the home page
 		.when('/', {
-			templateUrl : 'index.html'
+			templateUrl : 'submissions.html',
+			controller: 'submissionCtrl'
 		})
 
 		.when('/submissions/new', {
