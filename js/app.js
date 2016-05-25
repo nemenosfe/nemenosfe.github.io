@@ -20,6 +20,7 @@ app.controller('askCtrl', function($scope, $http) {
 app.controller('submissionCtrl', function($scope, $http) {
 
     $scope.submissions = $http.get('https://still-earth-13848.herokuapp.com/api/submissions');
+    $scope.text = "Prova per saber si funciona";
 
 })
 
