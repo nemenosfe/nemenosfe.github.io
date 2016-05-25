@@ -18,6 +18,9 @@
 .navbar-default .navbar-brand:hover{
     background-color: rgba(255,255,255,0.5); /* Changes toggle color on hover */
 }
+.nav .navbar-nav .navbar-brand:hover{
+    background-color: rgba(255,255,255,0.5); /* Changes toggle color on hover */
+}
 .navbar-default {
     margin-left: 4em;
     margin-right: 4em;
