@@ -4,6 +4,7 @@
         <tr ng-repeat="submission in submissions">
           <td>
             {{ submissions.length-submission.id+1 }}.
+            {{ submission.title }}
             <!--<% if current_user %>
               <% if !current_user.voted_for? submission%>
                 <%= link_to image_tag("up.png", size: "10"), like_submission_path(submission), method: :put %>
@@ -11,8 +12,8 @@
                 <%= image_tag("voted.png", size: "10") %>
               <% end %>
             <% end %> -->
-			<a ng-if="!submission.url" ng-href="/submissions/{{ submission.id }}"> {{ submission.title }} </a>
-			<a ng-if="submission.url" ng-href="{{ submission.url }}"> {{ submission.title }} </a>
+			<!--<a ng-if="!submission.url" ng-href="/submissions/{{ submission.id }}"> {{ submission.title }} </a>
+			<a ng-if="submission.url" ng-href="{{ submission.url }}"> {{ submission.title }} </a>-->
           </td>
         </tr>
         <!-- <tr class="filaInf">
