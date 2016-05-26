@@ -96,17 +96,17 @@ app.config(function($routeProvider, $locationProvider) {
 
 		// route for the home page
 		.when('/', {
-			templateUrl : 'views/submissions.html',
+			templateUrl : '../views/submissions.html',
 			controller: 'submissionCtrl'
 		})
 
 		.when('/submissions/new', {
-			templateUrl: 'views/submit.html',
+			templateUrl: '../views/submit.html',
 			controller: 'newSubmissionCtrl'
 		})
 
 		.when('/submissions/:id', {
-			templateUrl: 'views/submission.html',
+			templateUrl: '../views/submission.html',
 			controller: 'singleSubmissionCtrl'
 		})
 
@@ -117,17 +117,17 @@ app.config(function($routeProvider, $locationProvider) {
 		})*/
 
 		.when('/comments/:id', {
-			templateUrl: 'views/comment.html',
+			templateUrl: '../views/comment.html',
 			controller: 'commentCtrl'
 		})
 
 		.when('/ask', {
-			templateUrl: 'views/ask.html',
+			templateUrl: '../views/ask.html',
 			controller: 'askCtrl'
 		})
 
 		.when('/threads/:id', {
-			templateUrl: 'views/threads.html',
+			templateUrl: '../views/threads.html',
 			controller: 'threadsCtrl'
 		})
 
@@ -137,7 +137,7 @@ app.config(function($routeProvider, $locationProvider) {
 		})*/
 
 		.when('/users/:id/submissions', {
-			templateUrl: 'views/submissions.html',
+			templateUrl: '../views/submissions.html',
 			controller: 'userSubmissionsCtrl'
 		})
 
@@ -152,7 +152,7 @@ app.config(function($routeProvider, $locationProvider) {
 		})*/
 
 		.when('/users/:id/comments', {
-			templateUrl: 'views/comments.html',
+			templateUrl: '../views/comments.html',
 			controller: 'userCommentsCtrl'
 		})
 
@@ -168,15 +168,14 @@ app.config(function($routeProvider, $locationProvider) {
 		})*/
 
 		.when('/users/:id', {
-			templateUrl: 'views/user.html',
+			templateUrl: '../views/user.html',
 			controller: 'userCtrl' // Per GET i PUT??
 		})
 
-		.otherwise({ templateUrl: 'views/404.html' })
+		.otherwise({ templateUrl: '../views/404.html' })
 
 	$locationProvider.html5Mode(true);
 
     //console.log("Current route: " + $location.path());
 
 });
-
