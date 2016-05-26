@@ -96,17 +96,17 @@ app.config(function($routeProvider, $locationProvider) {
 
 		// route for the home page
 		.when('/', {
-			templateUrl : 'submissions.html',
+			templateUrl : '/views/submissions.html',
 			controller: 'submissionCtrl'
 		})
 
 		.when('/submissions/new', {
-			templateUrl: 'submit.html',
+			templateUrl: '/views/submit.html',
 			controller: 'newSubmissionCtrl'
 		})
 
 		.when('/submissions/:id', {
-			templateUrl: 'submission.html',
+			templateUrl: '/views/submission.html',
 			controller: 'singleSubmissionCtrl'
 		})
 
@@ -117,17 +117,17 @@ app.config(function($routeProvider, $locationProvider) {
 		})*/
 
 		.when('/comments/:id', {
-			templateUrl: 'comment.html',
+			templateUrl: '/views/comment.html',
 			controller: 'commentCtrl'
 		})
 
 		.when('/ask', {
-			templateUrl: 'ask.html',
+			templateUrl: '/views/ask.html',
 			controller: 'askCtrl'
 		})
 
 		.when('/threads/:id', {
-			templateUrl: 'threads.html',
+			templateUrl: '/views/threads.html',
 			controller: 'threadsCtrl'
 		})
 
@@ -137,7 +137,7 @@ app.config(function($routeProvider, $locationProvider) {
 		})*/
 
 		.when('/users/:id/submissions', {
-			templateUrl: 'submissions.html',
+			templateUrl: '/views/submissions.html',
 			controller: 'userSubmissionsCtrl'
 		})
 
@@ -152,7 +152,7 @@ app.config(function($routeProvider, $locationProvider) {
 		})*/
 
 		.when('/users/:id/comments', {
-			templateUrl: 'comments.html',
+			templateUrl: '/views/comments.html',
 			controller: 'userCommentsCtrl'
 		})
 
@@ -168,11 +168,11 @@ app.config(function($routeProvider, $locationProvider) {
 		})*/
 
 		.when('/users/:id', {
-			templateUrl: 'user.html',
+			templateUrl: '/views/user.html',
 			controller: 'userCtrl' // Per GET i PUT??
 		})
 
-		.otherwise({ templateUrl: '404.html' })
+		.otherwise({ templateUrl: '/views/404.html' })
 
 	$locationProvider.html5Mode(true);
 
