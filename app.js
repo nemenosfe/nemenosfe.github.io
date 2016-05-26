@@ -1,4 +1,4 @@
-angular.module('joox-angular',['ngRoute'])
+angular.module('jooxAngular',['ngRoute'])
 
 .config(function($routeProvider, $locationProvider) {
 
