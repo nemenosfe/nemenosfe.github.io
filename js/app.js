@@ -95,51 +95,51 @@ app.config(function($routeProvider, $locationProvider) {
 	$routeProvider
 
 		.when('/', {
-			templateUrl : '../views/submissions.html',
+			templateUrl : '../submissions.html',
 			controller: 'submissionCtrl'
 		})
 
 		.when('/submissions/new', {
-			templateUrl: '../views/submit.html',
+			templateUrl: '../submit.html',
 			controller: 'newSubmissionCtrl'
 		})
 
 		.when('/submissions/:id', {
-			templateUrl: '../views/submission.html',
+			templateUrl: '../submission.html',
 			controller: 'singleSubmissionCtrl'
 		})
 
 		.when('/comments/:id', {
-			templateUrl: '../views/comment.html',
+			templateUrl: '../comment.html',
 			controller: 'commentCtrl'
 		})
 
 		.when('/ask', {
-			templateUrl: '../views/ask.html',
+			templateUrl: '../ask.html',
 			controller: 'askCtrl'
 		})
 
 		.when('/threads/:id', {
-			templateUrl: '../views/threads.html',
+			templateUrl: '../threads.html',
 			controller: 'threadsCtrl'
 		})
 
 		.when('/users/:id/submissions', {
-			templateUrl: '../views/submissions.html',
+			templateUrl: '../submissions.html',
 			controller: 'userSubmissionsCtrl'
 		})
 
 		.when('/users/:id/comments', {
-			templateUrl: '../views/comments.html',
+			templateUrl: '../comments.html',
 			controller: 'userCommentsCtrl'
 		})
 
 		.when('/users/:id', {
-			templateUrl: '../views/user.html',
+			templateUrl: '../user.html',
 			controller: 'userCtrl' // Per GET i PUT??
 		})
 
-		.otherwise({ templateUrl: '../views/404.html' })
+		.otherwise({ templateUrl: '../404.html' })
 
 	$locationProvider.html5Mode(true);
 
