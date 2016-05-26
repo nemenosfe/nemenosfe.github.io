@@ -1,4 +1,4 @@
-var app = angular.module('joox-angular',[]);
+var app = angular.module('joox-angular',['joox-routes']);
 
 app.controller('commentCtrl', function($scope, $http, $routeParams) {
 
