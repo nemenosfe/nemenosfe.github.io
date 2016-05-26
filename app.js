@@ -1,6 +1,6 @@
 angular.module('jooxAngular',['ngRoute', 'commentCtrl', 'submissionCtrl', 'userCtrl'])
 
-.config(function($routeProvider, $locationProvider) {
+.config(function($routeProvider, $httpProvider) {
 
 	$routeProvider
 
@@ -51,6 +51,6 @@ angular.module('jooxAngular',['ngRoute', 'commentCtrl', 'submissionCtrl', 'userC
 
 		.otherwise({ templateUrl: 'views/404.html' })
 
-	$locationProvider.html5Mode(true);
+	//$locationProvider.html5Mode(true);
 
 });

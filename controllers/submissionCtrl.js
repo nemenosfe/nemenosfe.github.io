@@ -2,7 +2,7 @@ angular.module('submissionCtrl', [])
 
 .controller('submissionCtrl', function($scope, $http) {
 
-    $scope.submissions = $http.get('https://joox-new-nemenosfe.c9users.io/api/submissions');
+    $scope.submissions = $http.get('https://still-earth-13848.herokuapp.com/api/submissions.json');
 
 })
 
