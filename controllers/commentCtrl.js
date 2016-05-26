@@ -1,6 +1,6 @@
-angular.module('commentController', [])
+angular.module('commentCtrl', [])
 
-.controller('commentController', function($scope, $http, $routeParams) {
+.controller('commentCtrl', function($scope, $http, $routeParams) {
 
     $scope.comment = $http.get('https://still-earth-13848.herokuapp.com/api/comments/' + $routeParams.id);
 
