@@ -1,6 +1,6 @@
 angular.module('jooxAngular',['ngRoute', 'commentCtrl', 'submissionCtrl', 'userCtrl'])
 
-.config(function($routeProvider, $httpProvider) {
+.config(function($routeProvider, $locationProvider, $httpProvider) {
 
 	$httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
@@ -44,6 +44,6 @@ angular.module('jooxAngular',['ngRoute', 'commentCtrl', 'submissionCtrl', 'userC
 		})
 		.otherwise({ templateUrl: 'views/404.html' })
 
-	//$locationProvider.html5Mode(true);
+	$locationProvider.html5Mode(true);
 
 });
