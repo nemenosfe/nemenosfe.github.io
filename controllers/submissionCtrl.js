@@ -1,4 +1,4 @@
-angular.module('submissionCtrl')
+angular.module('submissionCtrl', [])
 
 .controller('submissionCtrl', function($scope, $http) {
 

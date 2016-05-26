@@ -1,4 +1,4 @@
-angular.module('joox-angular',['ngRoute'])
+angular.module('joox-angular',['ngRoute', 'submissionCtrl', 'commentCtrl', 'userCtrl'])
 
 .config(function($routeProvider, $locationProvider) {
 
