@@ -19,9 +19,10 @@ app.controller('askCtrl', function($scope, $http) {
 
 app.controller('submissionCtrl', function($scope, $http) {
 
-    $scope.submissions = $http.get('https://joox-new-nemenosfe.c9users.io/api/submissions');
-    $scope.text = "Prova per saber si funciona";
-
+    $scope.submissions = {};
+    $http.get('https://still-earth-13848.herokuapp.com/api/submissions').success(function(data) {
+        $scope.submissions = data;
+    });
 })
 
 app.controller('singleSubmissionCtrl', function($scope, $http, $routeParams) {
