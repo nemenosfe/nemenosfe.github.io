@@ -1,4 +1,4 @@
-angular.module('userCtrl', [])
+angular.module('userCtrl')
 
 .controller('threadsCtrl', function($http, $routeParams) {
 

@@ -1,4 +1,4 @@
-angular.module('commentCtrl', [])
+angular.module('commentCtrl')
 
 .controller('commentCtrl', function($scope, $http, $routeParams) {
 
