@@ -90,11 +90,9 @@ app.controller('userCommentsCtrl', function($http, $scope, $routeParams) {
 
 })
 
-app.config(function($routeProvider, $locationProvider) {
+app.config(function($routeProvider) {
 
 	$routeProvider
-
-		// route for the home page
 		.when('/', {
 			templateUrl : '../views/submissions.html',
 			controller: 'submissionCtrl'
@@ -109,12 +107,6 @@ app.config(function($routeProvider, $locationProvider) {
 			templateUrl: '../views/submission.html',
 			controller: 'singleSubmissionCtrl'
 		})
-
-		//Cal? /submissions no té vista
-		/*.when('/submissions', {
-			templateUrl: 'index.html',
-			controller: 'submissionCtrl'
-		})*/
 
 		.when('/comments/:id', {
 			templateUrl: '../views/comment.html',
@@ -131,41 +123,15 @@ app.config(function($routeProvider, $locationProvider) {
 			controller: 'threadsCtrl'
 		})
 
-		/*.when('/submissions/:id/like', {
-			templateUrl: 'submission.html',
-			controller: 'singleSubmissionCtrl', // Falta poder fer PUT
-		})*/
-
 		.when('/users/:id/submissions', {
 			templateUrl: '../views/submissions.html',
 			controller: 'userSubmissionsCtrl'
 		})
 
-		/*.when('/comments', {
-			templateUrl: '../index.html', //tinc dubtes perque es un post XD
-			controller: 'commentCtrl',
-		})
-
-		.when('/comments/:id/like', {
-			templateUrl: '../comment.html',
-			controller: 'commentCtrl' //Falta poder fer PUT
-		})*/
-
 		.when('/users/:id/comments', {
 			templateUrl: '../views/comments.html',
 			controller: 'userCommentsCtrl'
 		})
-
-		/*.when('/replies', {
-			templateUrl: '../index.html',
-			controller: 'repliesCtrl' //Falta aquest controllador per fer el POST (Crear una reply)
-		})*/
-
-
-		/*.when('/replies/:id/like', {
-			templateUrl: '../index.html',
-			controller: 'replyCtrl' //Falta per fer el put
-		})*/
 
 		.when('/users/:id', {
 			templateUrl: '../views/user.html',
@@ -173,9 +139,5 @@ app.config(function($routeProvider, $locationProvider) {
 		})
 
 		.otherwise({ templateUrl: '../views/404.html' })
-
-	$locationProvider.html5Mode(true);
-
-    //console.log("Current route: " + $location.path());
 
 });
