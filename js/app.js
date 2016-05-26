@@ -90,9 +90,10 @@ app.controller('userCommentsCtrl', function($http, $scope, $routeParams) {
 
 })
 
-app.config(['$routeProvider',
-function($routeProvider) {
-    $routeProvider
+app.config(function($routeProvider, $locationProvider) {
+
+	$routeProvider
+
 		// route for the home page
 		.when('/', {
 			templateUrl : 'views/submissions.html',
@@ -174,4 +175,8 @@ function($routeProvider) {
 		.otherwise({ templateUrl: 'views/404.html' })
 
 	$locationProvider.html5Mode(true);
-}]);
+
+    //console.log("Current route: " + $location.path());
+
+});
+
