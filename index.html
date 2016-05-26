@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
-<head ng-app="joox-angular">
+<html ng-app="joox-angular">
+<head>
 	<title>Joox|News</title>
+
+	<base href="/">
 
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,22 +12,26 @@
 	<link href="css/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/main.css" rel="stylesheet">
 
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-	<script src="js/app.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
+
+	<script src="app.js"></script>
+	<script src="controllers/commentCtrl.js"></script>
+	<script src="controllers/submissionCtrl.js"></script>
+	<script src="controllers/userCtrl.js"></script>
+
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="css/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 
 </head>
 <body>
-	<div ng-include="'header.html'"></div>
+	<header ng-include="'views/header.html'"></header>
 
 	<div class="container container-main">
 
 		<div ng-view></div>
 
-	    <footer id="footer" role="contentinfo">
-	      <hr class="hr hrfooter">
-	      <p class="copyright text-center">Xavier Algarra | Octavi Prats | Jaume Lladó | Oscar Serrano
-				<p class="copyright text-center">&copy; 2016 Joox News | All Rights Reserved
-	  	</footer>
+	    <footer ng-include="'views/footer.html'"></footer>
 	</div>
 </body>
 </html>
