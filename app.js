@@ -1,6 +1,6 @@
 angular.module('joox-angular',['ngRoutes'])
 
-config(function($routeProvider, $locationProvider) {
+.config(function($routeProvider, $locationProvider) {
 
 	$routeProvider
 
