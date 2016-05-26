@@ -2,15 +2,21 @@ angular.module('submissionCtrl', [])
 
 .controller('submissionCtrl', function($scope, $http) {
 
-    $scope.submissions = $http.get('https://still-earth-13848.herokuapp.com/api/submissions.json');
+    //$scope.submissions = $http.get('https://still-earth-13848.herokuapp.com/api/submissions.json');
 
-})
+    $http.get('https://still-earth-13848.herokuapp.com/api/submissions.json')
+    .success(function(data) {
+        console.log(data);
+        $scope.submissions  = data.reverse();
+    });
+
+});
 
 .controller('askCtrl', function($scope, $http) {
 
     $scope.ask = $http.get('https://still-earth-13848.herokuapp.com/api/ask');
 
-})
+});
 
 .controller('singleSubmissionCtrl', function($scope, $http, $routeParams) {
 
@@ -36,7 +42,7 @@ angular.module('submissionCtrl', [])
         $scope.$apply();
     };
 
-})
+});
 
 .controller('newSubmissionCtrl', function($scope, $http) {
 
