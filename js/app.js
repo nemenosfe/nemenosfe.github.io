@@ -19,10 +19,9 @@ app.controller('askCtrl', function($scope, $http) {
 
 app.controller('submissionCtrl', function($scope, $http) {
 
-    $scope.submissions = {};
-    $http.get('https://still-earth-13848.herokuapp.com/api/submissions').success(function(data) {
-        $scope.submissions = data;
-    });
+    $scope.submissions = $http.get('https://joox-new-nemenosfe.c9users.io/api/submissions');
+    $scope.text = "Prova per saber si funciona";
+
 })
 
 app.controller('singleSubmissionCtrl', function($scope, $http, $routeParams) {
@@ -91,9 +90,10 @@ app.controller('userCommentsCtrl', function($http, $scope, $routeParams) {
 
 })
 
-app.config(function($routeProvider) {
+app.config(function($routeProvider, $locationProvider) {
 
 	$routeProvider
+
 		.when('/', {
 			templateUrl : '../views/submissions.html',
 			controller: 'submissionCtrl'
@@ -140,5 +140,7 @@ app.config(function($routeProvider) {
 		})
 
 		.otherwise({ templateUrl: '../views/404.html' })
+
+	$locationProvider.html5Mode(true);
 
 });
