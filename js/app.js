@@ -104,7 +104,7 @@ app.config(function($routeProvider, $locationProvider) {
 			controller: 'newSubmissionCtrl'
 		})
 
-		.when('/submissions/:id', {
+		.when('submissions/:id', {
 			templateUrl: '../submission.html',
 			controller: 'singleSubmissionCtrl'
 		})
