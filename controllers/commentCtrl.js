@@ -14,4 +14,4 @@ angular.module('commentCtrl', [])
 
     $scope.comments = $http.get('https://still-earth-13848.herokuapp.com/api/users/' + id + '/comments');
 
-})
+});
