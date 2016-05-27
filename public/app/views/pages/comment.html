@@ -1,0 +1,25 @@
+<div>
+  <table class="tableSub">
+    <tbody>
+      <tr>
+        <tr>
+          <td>
+            XXX point(s) by {{ comment.nom }} {{ comment.created_at }} hours ago
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{ comment.text }}
+          </td>
+        </tr>
+      </tr>
+      <tr> 
+        <form> 
+          <input type="hidden" name="id">
+          <textarea name="text"></textarea>
+          <input type="submit" name="addReply">
+        </form>
+      </tr>
+    </tbody>
+  </table> 
+</div>
