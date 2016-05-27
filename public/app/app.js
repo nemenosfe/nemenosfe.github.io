@@ -1,1 +1,1 @@
-angular.module('jooxAngular',['app.routes', 'commentCtrl', 'submissionCtrl', 'userCtrl'])
+angular.module('jooxAngular',['app.routes', 'commentCtrl', 'submissionCtrl', 'userCtrl', 'sessionCtrl'])
