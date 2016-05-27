@@ -20,7 +20,7 @@ angular.module('submissionCtrl', [])
 
     $http.get('https://still-earth-13848.herokuapp.com/api/ask.json')
     .success(function(data) {
-        $scope.ask = data.reverse();
+        $scope.ask = data;
     });
 
 })
