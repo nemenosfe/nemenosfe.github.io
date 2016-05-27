@@ -40,6 +40,10 @@ angular.module('app.routes',['ngRoute'])
 			templateUrl: 'app/views/pages/user.html',
 			controller: 'userCtrl'
 		})
+		.when('/login', {
+			templateUrl: 'app/views/pages/login.html',
+			controller: 'loginCtrl'
+		})
 		.otherwise({ templateUrl: 'app/views/pages/404.html' })
 
 	$locationProvider.html5Mode(true);

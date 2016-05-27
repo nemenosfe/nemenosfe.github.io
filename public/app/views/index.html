@@ -7,13 +7,25 @@
 
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<!-- Auth0's lock widget library -->
+	<script type="text/javascript" src="https://cdn.auth0.com/js/lock-7.12.min.js"></script>
+	<!-- AngularJS core -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.js"></script>
+	<!-- Angular cookie wrapper library for client cookies -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular-cookies.js"></script>
+	<!-- Angular's Router Library for SPA -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular-route.js"></script>
+	<!-- Auth0's Angular SDK Library -->
+	<script type="text/javascript" src="https://cdn.auth0.com/w2/auth0-angular-4.js"></script>
+	<!-- Angular wrapper for localStorage and sessionStorage. Defaults to ng-cookies if not available -->
+	<script src="http://cdn.rawgit.com/auth0/angular-storage/master/dist/angular-storage.js" type="text/javascript"> </script>
+	<!-- Angular wrapper library for JWT-->
+	<script src="http://cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js" type="text/javascript"> </script>
 
 	<link href="assets/css/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="assets/css/main.css" rel="stylesheet">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
 
 	<script src="app/app.js"></script>
 	<script src="app/app.routes.js"></script>
@@ -21,6 +33,7 @@
 	<script src="app/controllers/submissionCtrl.js"></script>
 	<script src="app/controllers/userCtrl.js"></script>
 	<script src="app/controllers/sessionCtrl.js"></script>
+	<script src="app/controllers/loginCtrl.js"></script>
 
 	<script src="http://code.jquery.com/jquery.js"></script>
 	<script src="assets/css/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
