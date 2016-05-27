@@ -1,6 +1,9 @@
-var timef = function(date) {
+var timef = function(data) {
 
-    var seconds = Math.floor((new Date() - date) / 1000);
+    var d = new Date(data.substring(0,4),(data.substring(5,7))-1,data.substring(8,10),data.substring(11,13),data.substring(14,16),data.substring(17,19),data.substring(20,23))
+
+
+    var seconds = Math.floor((new Date() - d) / 1000);
 
     var interval = Math.floor(seconds / 31536000);
 
