@@ -2,8 +2,8 @@
 	<table class="tableSub">
     <tbody>
         <tr ng-repeat="submission in submissions">
-          <tr><td>{{ submission.title }} </td></tr>
-          <tr><td> {{ submission.points }} points by {{ submission.name }} {{ submission.created_at }} hours ago </td></tr>
+          <tr><td>{{ submission.title }}</td></tr>
+				  <tr><td> {{ submission.points }} {{ submission.user_id }}  {{ submission.created_at }} </td></tr>
         </tr>
     </tbody>
   </table>
