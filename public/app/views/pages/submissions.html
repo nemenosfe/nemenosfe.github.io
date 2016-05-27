@@ -1,14 +1,14 @@
 <div>
-	<div ng-repeat="submission in submissions">
-		<div>
-			<h1 class="titol pull-left"> {{size - submission.id}}. </h1>
-			<a href="#" class="pull-left"><img src= "../../../assets/images/up.png"></img></a>
-			<a href="#" class="pull-left"><h1 class = "titol"> {{ submission.title }}</h1></a>
-		</div>
-		<div>
-			<h1 class = "info"> {{ submission.points }} points by </h1>
-			<a href="#" ><h1 class = "info"> {{ submission.nom }}</h1>
-			<a href="#" ><h1 class = "info"> {{ submission.created_at }} hours ago </h1>
-		</div>
+  <div ng-repeat="submission in submissions">
+    <div class = "row">
+      <h1 class="titol col-md-1"> {{size - submission.id}}. </h1>
+      <a href="#" class="col-md-10"><img src= "../../../assets/images/up.png"></img></a>
+      <a href="#" class="col-md-1"><h1 class = "titol"> {{ submission.title }}</h1></a>
+    </div>
+    <div>
+      <h1 class = "info"> {{ submission.points }} points by </h1>
+      <a href="#" ><h1 class = "info"> {{ submission.nom }}</h1>
+      <a href="#" ><h1 class = "info"> {{ submission.created_at }} hours ago </h1>
+    </div>
   </div>
 </div>

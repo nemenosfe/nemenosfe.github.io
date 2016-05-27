@@ -1,40 +1,12 @@
-<div class="taulaEsquerra">
-  <table class="tableSub">
-    <tbody>
-        <tr ng-repeat="aux in threads.comments">
-          <tr>
-            <td>
-              XXX point(s) by {{ aux.nom }} {{ aux.created_at }} hours ago
-            </td>
-          </tr>
-          <tr>
-            <td>
-              {{ aux.text }}
-            </td>
-          </tr>
-          <tr>
-            <a href="#"> reply
-            </a>
-          </tr>
-        </tr>
-    </tbody>
-  </table>
-</div>
-<div class="taulaDreta">
-  <table class="tableSub">
-    <tbody>
-        <tr ng-repeat="aux in threads.replies">
-          <tr>
-            <td>
-              XXX point(s) by {{ aux.nom }} {{ aux.created_at }} hours ago
-            </td>
-          </tr>
-          <tr>
-            <td>
-              {{ aux.text }}
-            </td>
-          </tr>
-        </tr>
-    </tbody>
-  </table>
+<div>
+  <h1>comments</h1>
+  <div ng-repeat="comment in comments">
+    <h1 class="info">{{ comment.nom }} {{comment.created_at}} hours ago</h1>
+    <h1 class="titol"> {{ comment.text }} </h1>
+  </div>
+  <h1>replies</h1>
+  <div ng-repeat="reply in replies">
+    <h1 class="info">{{ reply.nom }} {{ reply.created_at }} hours ago</h1>
+    <h1 class="titol"> {{ reply.text }} </h1>
+  </div>
 </div>
