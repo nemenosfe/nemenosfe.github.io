@@ -2,7 +2,7 @@
   <table border="0"> 
     <tbody>
       <tr> <td> {{ submission.title }} </td></tr>
-      <tr> <td> {{ submission.points }} points by {{ submission.author }} <!-- posterior --> hours ago | {{ submission.comments.length }} comments 
+      <tr> <td> {{ submission.points }} points by {{ submission.nom }} <!-- posterior --> hours ago | {{ submission.comments.length }} comments 
       </td></tr>
       <tr> <td> {{ submission.text }}</td></tr>
       <tr> 
@@ -10,7 +10,7 @@
           <input type="hidden" name="id">
           <textarea name="text"></textarea>
           <input type="submit" name="addComment">
-        </form>)
+        </form>
       </tr>
     </tbody>
   </table> 
@@ -19,7 +19,12 @@
       <tr ng-repeat="comment in submission.comments">
         <tr>
           <td>
-            {{ comment.user_id }} <span></span>
+            {{ comment.user_id }} {{ comment.created_at }}
+          </td>
+        <tr>
+        <tr>
+          <td>
+            {{ comment.text }}
           </td>
         <tr>
       </tr>
