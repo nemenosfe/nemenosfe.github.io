@@ -17,10 +17,12 @@ angular.module('submissionCtrl', [])
 .controller('askCtrl', function($scope, $http) {
 
     $scope.ask = {};
+    $scope.size ={};
 
     $http.get('https://still-earth-13848.herokuapp.com/api/ask.json')
     .success(function(data) {
-        $scope.ask = data;
+        $scope.ask = data.reverse();
+        $scope.size = Object.keys($scope.ask).length + 1;
     });
 
 })

@@ -1,32 +1,3 @@
-<!--<div>
-  <table border="0">
-    <tbody>
-      <tr> <td> {{ submission.title }} </td></tr>
-      <tr> <td> {{ submission.points }} points by {{ submission.nom }} {{ submission.created_at}} hours ago | {{ submission.comments.length }} comments
-      </td></tr>
-      <tr> <td> {{ submission.text }}</td></tr>
-      <tr>
-        <form>
-          <input type="hidden" name="id">
-          <textarea name="text"></textarea>
-          <input type="submit" name="addComment">
-        </form>
-      </tr>
-    </tbody>
-  </table>
-  <table>
-    <tbody>
-      <tr ng-repeat="comment in submission.comments">
-        <td>{{ comment.nom }} {{ comment.created_at }} hours ago</td>
-        <td> {{ comment.text }} </td>
-        <tr ng-repeat="reply in comment.replies">
-          <td>{{ comment.nom }} {{ comment.created_at }} hours ago</td>
-          <td> {{ comment.text }} </td>
-        </tr>
-      </tr>
-    </tbody>
-  </table>
-</div>-->
 
 <div>
   <div>
