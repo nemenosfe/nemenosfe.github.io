@@ -1,4 +1,4 @@
-<div>
+<!--<div>
   <table border="0"> 
     <tbody>
       <tr> <td> {{ submission.title }} </td></tr>
@@ -26,4 +26,29 @@
       </tr>
     </tbody>
   </table>
+</div>-->
+
+<div>
+  <div>
+    <h1> {{ submission.title }} </h1>
+    <h2> {{ submission.points }} points by {{ submission.nom }} {{ submission.created_at}} hours ago | {{ submission.comments.length }} comments </h2>
+    <h2> {{ submission.text }}</h2>
+  </div>
+  <div>
+    <form> 
+      <input type="hidden" name="id">
+      <textarea name="text"></textarea>
+      <input type="submit" name="addComment">
+    </form>
+  </div>
+  <div>
+    <div ng-repeat="comment in submission.comments">
+      <h2>{{ comment.nom }} {{ comment.created_at }} hours ago</h2>
+      <h2> {{ comment.text }} </h2>
+      <div ng-repeat="reply in comment.replies">
+        <h2>{{ comment.nom }} {{ comment.created_at }} hours ago</h2>
+        <h2> {{ comment.text }} </h2>
+      </div>
+    </div>
+  </div>
 </div>
