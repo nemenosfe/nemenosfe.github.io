@@ -5,6 +5,10 @@
 			<a href="#" class="pull-left"><img src= "../../../assets/images/up.png"></img></a>
 			<a href="#" class="pull-left"><h1 class = "titol"> {{ submission.title }}</h1></a>
 		</div>
-		  <h1 class = "info"> {{ submission.points }} points by {{ submission.nom }} {{ submission.created_at }} hours ago </h1>
+		<div>
+			<h1 class = "info pull-left"> {{ submission.points }} points by </h1>
+			<a href="#" class="pull-left"><h1 class = "info"> {{ submission.nom }}</h1>
+			<a href="#" class="pull-left"><h1 class = "info"> {{ submission.created_at }} hours ago </h1>
+		</div>
   </div>
 </div>
