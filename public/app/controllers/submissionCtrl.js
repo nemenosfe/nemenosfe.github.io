@@ -42,6 +42,10 @@ angular.module('submissionCtrl', [])
         $scope.$apply();
     };
 
+    $scope.getDate = function(createdat) {
+        document.getElementById('time').innerHTML=createdat;
+    };
+
 })
 
 .controller('newSubmissionCtrl', function($scope, $http) {

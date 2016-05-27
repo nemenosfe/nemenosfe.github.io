@@ -1,15 +1,28 @@
 <div>
   <table border="0"> 
-    <tr> <td> {{ submission.title }} </td></tr>
-    <tr> <td> {{ submission.points }} points by {{ submission.author }} {{ submission.created_at }} hours ago | {{ submission.comments.length }} comments 
-    </td></tr>
-    <tr> <td> {{ submission.text }}</td></tr>
-    <tr> 
-      <form> 
-        <input type="hidden" name="id">
-        <textarea name="text"></textarea>
-        <input type="submit" name="addComment">
-      </form>)
-    </tr>
+    <tbody>
+      <tr> <td> {{ submission.title }} </td></tr>
+      <tr> <td> {{ submission.points }} points by {{ submission.author }} <!-- posterior --> hours ago | {{ submission.comments.length }} comments 
+      </td></tr>
+      <tr> <td> {{ submission.text }}</td></tr>
+      <tr> 
+        <form> 
+          <input type="hidden" name="id">
+          <textarea name="text"></textarea>
+          <input type="submit" name="addComment">
+        </form>)
+      </tr>
+    </tbody>
   </table> 
+  <table>
+    <tbody>
+      <tr ng-repeat="comment in submission.comments">
+        <tr>
+          <td>
+            {{ comment.user_id }} <span></span>
+          </td>
+        <tr>
+      </tr>
+    </tbody>
+  </table>
 </div>
