@@ -1,4 +1,4 @@
-var timef = function(data) {
+function getTime(data) {
 
     var d = new Date(data.substring(0,4),(data.substring(5,7))-1,data.substring(8,10),data.substring(11,13),data.substring(14,16),data.substring(17,19),data.substring(20,23))
 

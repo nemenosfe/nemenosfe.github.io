@@ -2,19 +2,14 @@
 <div>
   <div>
     <h1 class="titol"> {{ comment.title }} </h1>
-    <h1 class="info"> {{ comment.points }} points by {{ comment.nom }} {{ comment.created_at}} hours ago | {{ comment.comments.length }} comments </h1>
+    <h1 class="info"> {{ comment.points }} points by {{ comment.nom }} {{ comment.created_at}} hours ago </h1>
     <h1 class="titol"> {{ comment.text }}</h1>
   </div>
   <div>
     <form>
       <input type="hidden" name="id">
       <textarea name="text"></textarea>
-      <input type="submit" name="addComment">
+      <div><input type="submit" name="addComment"></div>
     </form>
-  </div>
-  <div>
-    <div ng-repeat="reply in comment.replies">
-      <h1 class="info">{{ reply.nom }} {{ reply.created_at }} hours ago</h1>
-      <h1 class="titol"> {{ reply.text }} </h1>
   </div>
 </div>

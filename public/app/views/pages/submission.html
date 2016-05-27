@@ -14,7 +14,7 @@
   </div>
   <div>
     <div ng-repeat="comment in submission.comments">
-      <h1 class="info">{{ comment.nom }} {{ comment.created_at }} hours ago</h1>
+      <h1 class="info">{{ comment.nom }} <script> getTime({{comment.created_at}}) </script> hours ago</h1>
       <h1 class="titol"> {{ comment.text }} </h1>
       <div ng-repeat="reply in comment.replies">
         <h1 class="info">{{ reply.nom }} {{ reply.created_at }} hours ago</h1>
