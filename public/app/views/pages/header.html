@@ -1,5 +1,5 @@
 <header>
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default" role="navigation" ng-controller="sessionCtrl as session">
   <div class = "navbar-header">
     <button class="navbar-toggle" data-toggle="collapse"
       data-target=".navbar-ex1-collapse">
@@ -13,7 +13,7 @@
     <a class="navbar-brand" href="/">Joox News</a>
   </div>
 
-  <div class="collapse navbar-collapse navbar-ex1-collapse" ng-controller="sessionCtrl">
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav navbar-left">
       <li><a class="navbar-brand" href="#">  threads </a></li>
     </ul>
@@ -24,7 +24,7 @@
       <li><a class="navbar-brand" href="#">   submit </a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a class="navbar-brand" href="#" ng-click="sessionCtrl.login()"> Login </a></li>
+      <li><a class="navbar-brand" href="#" ng-click="session.login()"> Login </a></li>
     </ul>
   </div>
 </nav>
