@@ -3,12 +3,15 @@ angular.module('submissionCtrl', [])
 .controller('submissionCtrl', function($scope, $http) {
 
     $scope.submissions = {};
+    $scope.size = {};
 
     $http.get('https://still-earth-13848.herokuapp.com/api/submissions.json')
     .success(function(data) {
         console.log(data);
         $scope.submissions = data.reverse();
     });
+
+    var $scope.size = Object.keys($scope.submissions).length;
 
 })
 
