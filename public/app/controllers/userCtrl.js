@@ -19,7 +19,7 @@ angular.module('userCtrl', [])
     });
 
     $scope.edit = function(about) {
-        return $http.put('https://still-earth-13848.herokuapp.com/api/users/' + $routeParams.id + '?about=' + about + '.json');
+        $http.put('https://still-earth-13848.herokuapp.com/api/users/' + $routeParams.id + '?about=' + about + '.json');
         $scope.$apply();
     };
 })
