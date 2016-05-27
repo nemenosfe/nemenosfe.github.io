@@ -1,9 +1,9 @@
 <div>
 	<div ng-repeat="submission in submissions">
-		<div class="row">
-			<h1 class="titol col-md-1"> {{size - submission.id}}. </h1>
-			<a href="#" class="col-md-1"><img src= "../../../assets/images/up.png"></img></a>
-			<a href="#" class="col-md-10"><h1 class = "titol"> {{ submission.title }}</h1></a>
+		<div class="pull-left">
+			<h1 class="titol"> {{size - submission.id}}. </h1>
+			<a href="#"><img src= "../../../assets/images/up.png"></img></a>
+			<a href="#"><h1 class = "titol"> {{ submission.title }}</h1></a>
 		</div>
 		  <h1 class = "info"> {{ submission.points }} points by {{ submission.nom }} {{ submission.created_at }} hours ago </h1>
   </div>
