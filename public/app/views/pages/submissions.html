@@ -1,9 +1,9 @@
 <div>
 	<div ng-repeat="submission in submissions">
-		<div class="pull-left">
-			<h1 class="titol"> {{size - submission.id}}. </h1>
-			<a href="#"><img src= "../../../assets/images/up.png"></img></a>
-			<a href="#"><h1 class = "titol"> {{ submission.title }}</h1></a>
+		<div>
+			<h1 class="titol pull-left"> {{size - submission.id}}. </h1>
+			<a href="#" class="pull-left"><img src= "../../../assets/images/up.png"></img></a>
+			<a href="#" class="pull-left"><h1 class = "titol"> {{ submission.title }}</h1></a>
 		</div>
 		  <h1 class = "info"> {{ submission.points }} points by {{ submission.nom }} {{ submission.created_at }} hours ago </h1>
   </div>
