@@ -9,9 +9,8 @@ angular.module('submissionCtrl', [])
     .success(function(data) {
         console.log(data);
         $scope.submissions = data.reverse();
+        $scope.size = Object.keys($scope.submissions).length;
     });
-
-    var $scope.size = Object.keys($scope.submissions).length;
 
 })
 
