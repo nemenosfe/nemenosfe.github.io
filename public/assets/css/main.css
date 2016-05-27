@@ -11,6 +11,11 @@ h1.info {
   color: rgb(130, 130, 130);
   margin-top: 0;
 }
+h1.titol {
+  font-size: 10pt;
+  color: rgb(130, 130, 130);
+  margin: 0;
+}
 
 .container-main {
     background-color: #f0f3f1;
