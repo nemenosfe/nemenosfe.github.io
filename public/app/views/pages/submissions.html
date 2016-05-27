@@ -1,4 +1,4 @@
-<div>
+<!--<div>
 	<table class="tableSub">
     <tbody>
         <tr ng-repeat="submission in submissions">
@@ -7,4 +7,11 @@
         </tr>
     </tbody>
   </table>
+</div>-->
+
+<div>
+	<div ng-repeat="submission in submissions">
+      <h1>{{ submission.title }}</h1>
+		  <h2> {{ submission.points }} points by {{ submission.nom }} {{ submission.created_at }} hours ago </h2>
+  </div>
 </div>
