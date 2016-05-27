@@ -1,43 +1,7 @@
 <div>
-  <table class="tableSub">
-    <tbody>
-        <tr ng-repeat="sub in ask">
-          <tr>
-            <td>
-              <!--{{ submissions.length-submission.id+1 }}.-->
-              {{ sub.title }}
-              <!--<% if current_user %>
-                <% if !current_user.voted_for? submission%>
-                  <%= link_to image_tag("up.png", size: "10"), like_submission_path(submission), method: :put %>
-                  <% else %>
-                  <%= image_tag("voted.png", size: "10") %>
-                <% end %>
-              <% end %> -->
-        <!--<a ng-if="!submission.url" ng-href="/submissions/{{ submission.id }}"> {{ submission.title }} </a>
-        <a ng-if="submission.url" ng-href="{{ submission.url }}"> {{ submission.title }} </a>-->
-            </td>
-          </tr>
-          <tr>
-            <td>
-              XXX points {{ sub.nom }} {{ sub.created_at }} hours ago | {{ sub.comment.length }} comments
-            </td>
-          </tr>
-        </tr>
-        <!-- <tr class="filaInf">
-          <td> <%= submission.get_upvotes.size %> points</td>
-          <% if current_user && (getUser(submission.user_id) == current_user) %>
-          <td> by <%= link_to getUserName(submission.user_id), 'users/' +getUserNormalId(submission.user_id).to_s+'/edit', class: "linkH" %></td>
-          <% else %>
-          <td> by <%= link_to getUserName(submission.user_id), getUser(submission.user_id), class: "linkH" %></td>
-          <% end %>
-
-          <% if ((Time.now - submission.created_at)/3600).to_i < 24 %>
-              <td valign="top"></td><td><%= ((Time.now - submission.created_at)/3600).to_i %> hours ago |</td>
-          <% else %>
-              <td valign="top"></td><td><%= (((Time.now - submission.created_at)/3600).to_i)/24 %> days ago |</td>
-          <% end %>
-          <td class="linkH"><%= gettotalcom(submission.id) %> <%= link_to 'comments', submission %> </td>
-    </tr> -->
-    </tbody>
-  </table>
+  <div ng-repeat="submission in ask">
+      <a href="#"><h1 class = "titol">{{size - submission.id}}. {{ submission.title }}</h1></a>
+      <h1 class = "info"> {{ submission.points }} points by {{ submission.nom }} {{ submission.created_at }} hours ago </h1>
+  </div>
 </div>
+
