@@ -5,6 +5,7 @@
           <td>
             <!--{{ submissions.length-submission.id+1 }}.-->
             {{ submission.title }}
+
             <!--<% if current_user %>
               <% if !current_user.voted_for? submission%>
                 <%= link_to image_tag("up.png", size: "10"), like_submission_path(submission), method: :put %>
@@ -16,6 +17,9 @@
 			<a ng-if="submission.url" ng-href="{{ submission.url }}"> {{ submission.title }} </a>-->
           </td>
         </tr>
+				<td> {{ submission.points }} </td>
+				<td> {{ submission.user_id }} </td>
+				<td> {{ submission.created_at }} </td>
         <!-- <tr class="filaInf">
           <td> <%= submission.get_upvotes.size %> points</td>
           <% if current_user && (getUser(submission.user_id) == current_user) %>
