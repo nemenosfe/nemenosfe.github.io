@@ -94,3 +94,7 @@ h1.titol {
     margin-bottom: 0;
   }
 }
+
+.enFila {
+  display: inline-block;
+}
