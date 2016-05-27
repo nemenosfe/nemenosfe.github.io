@@ -26,10 +26,12 @@ angular.module('submissionCtrl', [])
 .controller('singleSubmissionCtrl', function($scope, $http, $routeParams) {
 
     $scope.submission = {};
+    $scope.comments = {};
 
     $http.get('https://still-earth-13848.herokuapp.com/api/submissions/' + $routeParams.id + '.json')
     .success(function(data) {
         $scope.submission = data;
+        $scope.comments = $scope.submissions.comments;
     });
 
     $scope.likeSubmission = function() {
