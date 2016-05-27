@@ -80,6 +80,7 @@ h1, h2, h3, h4, h5, h6 {
 h1.titol {
   font-size: 10pt;
   color: #000000;
+  margin: 0;
 }
 h1.info {
   font-size: 7pt;
