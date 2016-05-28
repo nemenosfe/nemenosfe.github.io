@@ -28,7 +28,7 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
             $http.post('https://joox-new-nemenosfe.c9users.io/api/login?uid=' + $scope.id + '&name=' + $scope.name)
             .success(function(data) {
                 console.log(data);
-                console.log(data[api_key]);
+                console.log(data['api_key']);
             })
         })
     }
