@@ -9,7 +9,8 @@
     <div class="container">
       <h1 class = "info enFila"> {{ submission.points }} points by </h1>
       <a href="#" ><h1 class = "info enFila"> {{ submission.nom }}</h1>
-      <a href="#" ><h1 class = "info enFila"> <span id="data"> <script> getTimebody({{ submission.created_at }});</script></span>  hours ago </h1>
+      <a href="#" ><h1 class = "info enFila"> <span id="data"> <script> var a = {{ submission.created_at }};
+			 getTimebody(a);</script></span>  hours ago </h1>
     </div>
   </div>
 </div>
