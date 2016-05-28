@@ -25,17 +25,20 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
             $scope.name = data.screen_name;
             console.log("Id: " + $scope.id);
             console.log("Name: " + $scope.name);
-            var url = 'https://joox-new-nemenosfe.c9users.io/api/login';
-            var data = $.param({
+            $http.post('https://joox-new-nemenosfe.c9users.io/api/login?uid=' + $scope.id + '&name=' + $scope.name)
+            .success(function(data) {
+                console.log(data);
+            })
+            /*var data = $.param({
                 uid: $scope.id,
                 name: $scope.name
-            })
-            var config = {
+            })*/
+            /*var config = {
                 headers : {
                     'Content-Type': 'application/json'
                 }
-            }
-            $http.post(url, data, config)
+            }*/
+            /*$http.post(url, data, config)
                 .then(
                     function(response) {
                         console.log("Token: " + JSON.stringify(response));
@@ -43,7 +46,7 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
                     function(response) {
                         console.log("Error: " + JSON.stringify(response));
                     }
-                );
+                );*/
             })
     }
 
