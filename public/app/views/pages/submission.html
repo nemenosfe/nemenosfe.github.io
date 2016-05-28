@@ -3,7 +3,7 @@
   <div>
     <h1 class="titol"> {{ submission.title }} </h1>
     <h1 class="info"> {{ submission.points }} points by 
-    <a href="getUrl()" id="urlSub">{{ submission.nom }}</a>
+    <a href="#" id="urlSub">{{ submission.nom }}</a><script>getUrl()</script>
     {{ submission.created_at}} hours ago | {{ submission.comments.length }} comments </h1>
     <h1 class="titol"> {{ submission.text }}</h1>
   </div>
