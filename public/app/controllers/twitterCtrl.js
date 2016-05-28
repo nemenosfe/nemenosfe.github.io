@@ -1,8 +1,6 @@
 angular.module('twitterCtrl', ['jooxAngular.services'])
 
-.controller('twitterCtrl', function($scope, $q, twitterService) {
-    $scope.tweets = []; //array of tweets
-
+.controller('twitterCtrl', function($scope, $q, twitterService, $http) {
     twitterService.initialize();
 
     //when the user clicks the connect twitter button, the popup authorization window opens
@@ -12,8 +10,8 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
                 //if the authorization is successful, hide the connect button and display the tweets
                 $('#connectButton').fadeOut(function() {
                     $('#getTimelineButton, #signOut').fadeIn();
-                    $scope.refreshTimeline();
                     $scope.connectedTwitter = true;
+                    $scope.getUserInfo();
                 });
             } else {
 
@@ -21,10 +19,32 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
         });
     }
 
+    $scope.getUserInfo = function() {
+        twitterService.getUserInfo().then(function(data) {
+            $scope.id = data.id;
+            $scope.name = data.screen_name;
+            console.log("Id: " + $scope.id);
+            console.log("Name: " + $scope.name);
+            var url = 'https://joox-new-nemenosfe.c9users.io/api/login';
+            var data = $.param({
+                uid: $scope.id,
+                name: $scope.name
+            })
+            $http.post(url, data)
+                .then(
+                    function(response) {
+                        console.log("Token: " + JSON.stringify(response));
+                    },
+                    function(response) {
+                        console.log("Error: " + JSON.stringify(response));
+                    }
+                );
+            })
+    }
+
     //sign out clears the OAuth cache, the user will have to reauthenticate when returning
     $scope.signOut = function() {
         twitterService.clearCache();
-        $scope.tweets.length = 0;
         $('#getTimelineButton, #signOut').fadeOut(function() {
             $('#connectButton').fadeIn();
             $scope.$apply(function() {
@@ -38,6 +58,5 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
         $('#connectButton').hide();
         $('#getTimelineButton, #signOut').show();
         $scope.connectedTwitter = true;
-        $scope.refreshTimeline();
     }
 });
