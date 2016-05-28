@@ -9,31 +9,31 @@ function getTime(data) {
   var interval = Math.floor(seconds / 31536000);
 
   if (interval > 1) {
-      document.getElementById("data").innerHTML+= ( interval + " years");
+      document.body.appendChild( interval + " years");
       return
   }
   interval = Math.floor(seconds / 2592000);
   if (interval > 1) {
-      document.getElementById("data").innerHTML+= ( interval + " months");
+      document.body.appendChild( interval + " months");
       return
   }
   interval = Math.floor(seconds / 86400);
   if (interval > 1) {
-      document.getElementById("data").innerHTML+= ( interval + " days");
+      document.body.appendChild( interval + " days");
       return
   }
   interval = Math.floor(seconds / 3600);
   if (interval > 1) {
-      document.getElementById("data").innerHTML+= ( interval + " hours");
+      document.body.appendChild( interval + " hours");
       return
   }
   interval = Math.floor(seconds / 60);
   if (interval > 1) {
-      document.getElementById("data").innerHTML+= ( interval + " minutes");
+      document.body.appendChild( interval + " minutes");
       return
   }
 
   //document.body.appendChild(form);
 
-  document.getElementById("data").innerHTML+= ( Math.floor(seconds) + " seconds")
+  document.body.appendChild( Math.floor(seconds) + " seconds")
 }
