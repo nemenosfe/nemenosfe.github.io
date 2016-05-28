@@ -37,6 +37,5 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
         $('#connectButton').hide();
         $('#getTimelineButton, #signOut').show();
         $scope.connectedTwitter = true;
-        $scope.refreshTimeline();
     }
 });
