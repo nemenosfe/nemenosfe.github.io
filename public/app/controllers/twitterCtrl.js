@@ -1,8 +1,6 @@
 angular.module('twitterCtrl', ['jooxAngular.services'])
 
 .controller('twitterCtrl', function($scope, $q, twitterService) {
-    $scope.tweets = []; //array of tweets
-
     twitterService.initialize();
 
     //when the user clicks the connect twitter button, the popup authorization window opens
@@ -14,6 +12,7 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
                     $('#getTimelineButton, #signOut').fadeIn();
                     $scope.refreshTimeline();
                     $scope.connectedTwitter = true;
+                    console.log($q.id);
                 });
             } else {
 
