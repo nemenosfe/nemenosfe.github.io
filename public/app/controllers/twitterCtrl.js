@@ -11,6 +11,7 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
                 $('#connectButton').fadeOut(function() {
                     $('#getTimelineButton, #signOut').fadeIn();
                     $scope.connectedTwitter = true;
+                    $scope.getUserInfo();
                 });
             } else {
 
