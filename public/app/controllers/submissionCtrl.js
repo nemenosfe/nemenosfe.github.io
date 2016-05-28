@@ -184,7 +184,7 @@ angular.module('submissionCtrl', [])
                 $scope.submission = data;
             });
         }
-        $scope.$apply(function() { $location.path("/submissions/" + $scope.submission.id); });
+        $location.path("/submissions/" + $scope.submission.id);
     };
 
 });
