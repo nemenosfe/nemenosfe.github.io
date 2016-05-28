@@ -31,12 +31,7 @@ angular.module('submissionCtrl', [])
 
     $scope.submission = {};
 
-    $http.get('https://still-earth-13848.herokuapp.com/api/submissions/' + $routeParams.id + '.json')
-    .success(function(data) {
-        $scope.submission = data;
-        $scope.correctData = getDate($scope.submission.created_at);
-    });
-
+    
     $scope.getDate = function(data) {
         var d = new Date(data.substring(0,4),(data.substring(5,7))-1,data.substring(8,10),data.substring(11,13),data.substring(14,16),data.substring(17,19),data.substring(20,23));
         console.log(data);
@@ -67,6 +62,12 @@ angular.module('submissionCtrl', [])
 
         return Math.floor(seconds) + " seconds";
     };
+
+    $http.get('https://still-earth-13848.herokuapp.com/api/submissions/' + $routeParams.id + '.json')
+    .success(function(data) {
+        $scope.submission = data;
+        $scope.correctData = getDate($scope.submission.created_at);
+    });
 
     $scope.likeSubmission = function() {
         $http.put('https://still-earth-13848.herokuapp.com/api/submissions/' + $routeParams.id + '/like.json');
