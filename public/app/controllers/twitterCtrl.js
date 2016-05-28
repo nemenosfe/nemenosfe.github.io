@@ -11,12 +11,20 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
                 $('#connectButton').fadeOut(function() {
                     $('#getTimelineButton, #signOut').fadeIn();
                     $scope.connectedTwitter = true;
-                    console.log($q.id);
                 });
             } else {
 
             }
         });
+    }
+
+    $scope.getUserInfo = function() {
+        twitterService.getUserInfo().then(function(data) {
+            $scope.id = data.id;
+            $scope.name = data.name;
+            console.log("Id: " + $scope.id);
+            console.log("Name: " + $scope.name);
+        })
     }
 
     //sign out clears the OAuth cache, the user will have to reauthenticate when returning
