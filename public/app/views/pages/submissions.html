@@ -1,16 +1,19 @@
 <div>
   <div ng-repeat="submission in submissions">
     <div class = "container">
-      <h1 class="num enFila"> {{size - submission.id}}. </h1>
+      <h1 class="num enFila"> {{size - $index - 1}}. </h1>
       <a href="#" class="enFila"><img src= "../../../assets/images/up.png"></img></a>
-      <a href="#" class="enFila"><h1 class = "titol"> {{ submission.title }}</h1></a>
+      <a ng-if="!submission.url" ng-href="/submissions/{{ submission.id }}" class="enFila"><h1 class = "titol"> {{ submission.title }}</h1></a>
+      <a ng-if="submission.url" ng-href="{{ submission.url }}" class="enFila"><h1 class = "titol"> {{ submission.title }} ({{ submission.url }})</h1></a>
     </div>
 
     <div class="container">
       <h1 class = "info enFila"> {{ submission.points }} points by </h1>
-      <a href="#" ><h1 class = "info enFila"> {{ submission.nom }}</h1>
+      <a ng-href="/users/{{ submission.user_id }}" ><h1 class = "info enFila"> {{ submission.nom }}</h1>
       <a href="#" ><h1 class = "info enFila"> <span id="data"> <script> var a = {{ submission.created_at }};
 			 getTimebody(a);</script></span>  hours ago </h1>
+      <!-- s'ha de modificar el json builder perque torni els comments -->
+      <a ng-href="/submissions/{{ submission.id }}"><h1 class ="info enFila"> | {{ submission.comment.size }} comments</h1></a>
     </div>
   </div>
 </div>
