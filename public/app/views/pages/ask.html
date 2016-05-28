@@ -1,6 +1,9 @@
-<div>
+<div class="container">
   <div ng-repeat="submission in ask">
-      <h1 class = "titol">{{$index + 1}}. <a ng-href="/submissions/{{ submission.id }}">{{ submission.title }}</a></h1>
-      <h1 class = "info"> {{ submission.points }} points by <a ng-href="/users/{{ submission.user_id }}">{{ submission.nom }}</a> {{ submission.created_at }} hours ago </h1>
+      <h1 class = "titol">{{$index + 1}}.
+          <a href="#" ng-click="likeSubmission(submission.id)" class="enFila"><img src= "../../../assets/images/up.png"></img></a>
+          <a ng-href="/submissions/{{ submission.id }}"><h1 class="titol enFila">{{ submission.title }}</h1></a>
+      </h1>
+      <h1 class = "info"> {{ submission.points }} points by <a ng-href="/users/{{ submission.user_id }}"><h1 class="info enFila">{{ submission.nom }}</h1></a> {{getTime(submission.created_at)}} ago </h1>
   </div>
 </div>
