@@ -1,10 +1,10 @@
 angular.module('userCtrl', [])
 
-.controller('threadsCtrl', function($http, $scope, $routeParams) {
+.controller('threadsCtrl', function($http, $scope, $routeParams, $rootScope) {
 
     $scope.threads = {};
     $http.get('https://still-earth-13848.herokuapp.com/api/threads/' + $routeParams.id, {
-        headers: {'X-Api-Key': 'W4cMakBP2LelZFjtEEzM0gtt'}
+        headers: {'X-Api-Key': $rootScope.token}
     })
     .success(function(data) {
         $scope.threads = data;
