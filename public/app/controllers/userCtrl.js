@@ -1,6 +1,6 @@
 angular.module('userCtrl', [])
 
-.controller('threadsCtrl', function($http, $routeParams) {
+.controller('threadsCtrl', function($http, $scope, $routeParams) {
 
     $scope.threads = {};
     $http.get('https://still-earth-13848.herokuapp.com/api/threads/' + $routeParams.id + '.json')
