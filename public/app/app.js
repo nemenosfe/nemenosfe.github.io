@@ -33,8 +33,6 @@ angular.module('jooxAngular',['app.routes', 'auth0', 'angular-storage', 'angular
         $httpProvider.interceptors.push('jwtInterceptor');
 
 })
-
 .run(function(auth) {
-
     auth.hookEvents();
 });
