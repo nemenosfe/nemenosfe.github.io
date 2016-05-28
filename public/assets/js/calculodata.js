@@ -28,5 +28,6 @@ function getTime(data) {
     if (interval > 1) {
         return interval + " minutes";
     }
-    document.write( Math.floor(seconds) + " seconds");
+
+    document.getElementById("data").innerHTML+= ( Math.floor(seconds) + " seconds")
 }
