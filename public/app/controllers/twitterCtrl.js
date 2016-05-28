@@ -33,10 +33,10 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
             $http.post(url, data)
                 .then(
                     function(response) {
-                        console.log("Token: " + response);
+                        console.log("Token: " + JSON.stringify(response));
                     },
                     function(response) {
-                        console.log("Error: " + response);
+                        console.log("Error: " + JSON.stringify(response));
                     }
                 );
             })
