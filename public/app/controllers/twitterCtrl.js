@@ -22,13 +22,18 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
     $scope.getUserInfo = function() {
         twitterService.getUserInfo().then(function(data) {
             $scope.id = data.id;
-            $scope.name = data.screen_name;
+            $scope.screen_name = data.screen_name;
+            $scope.name = data.name;
             console.log("Id: " + $scope.id);
-            console.log("Name: " + $scope.name);
-            $http.post('https://still-earth-13848.herokuapp.com/api/login?uid=' + $scope.id + '&name=' + $scope.name)
+            console.log("Name: " + $scope.screen_name);
+            $http.post('https://still-earth-13848.herokuapp.com/api/login?uid=' + $scope.id + '&name=' + $scope.screen_name)
             .success(function(data) {
                 console.log(data['api_key']);
                 $rootScope.token = data['api_key'];
+                $rootScope.connected = true;
+                $rootScope.userName = $scope.name;
+                console.log($rootScope.connected);
+                console.log($rootScope.userName);
             })
         })
     }
@@ -40,6 +45,12 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
             $('#connectButton').fadeIn();
             $scope.$apply(function() {
                 $scope.connectedTwitter = false
+                $rootScope.token = null;
+                $rootScope.connected = false;
+                $rootScope.userName = null;
+                console.log($rootScope.token);
+                console.log($rootScope.connected);
+                console.log($rootScope.userName);
             })
         });
     }
