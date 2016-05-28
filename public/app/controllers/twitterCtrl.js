@@ -30,10 +30,12 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
             .success(function(data) {
                 console.log(data['api_key']);
                 $rootScope.token = data['api_key'];
+                $rootScope.userID = data['id'];
                 $rootScope.connected = true;
                 $rootScope.userName = $scope.name;
                 console.log($rootScope.connected);
                 console.log($rootScope.userName);
+                console.log($rootScope.userID);
             })
         })
     }
@@ -46,11 +48,13 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
             $scope.$apply(function() {
                 $scope.connectedTwitter = false
                 $rootScope.token = null;
+                $rootScope.userID = null;
                 $rootScope.connected = false;
                 $rootScope.userName = null;
                 console.log($rootScope.token);
                 console.log($rootScope.connected);
                 console.log($rootScope.userName);
+                console.log($rootScope.userID);
             })
         });
     }
