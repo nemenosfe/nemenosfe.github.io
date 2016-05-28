@@ -1,31 +1,31 @@
 <div class="container">
-  <form >
+  <form ng-submit="postNew()">
       <div class="row text-center">
-        <h6 class="titol col-sm-2 text-center">title:</h6>
-        <input class = "col-sm-2 enFila" type="text" name="title">
+        <h6 class="titol col-sm-1 text-center">title:</h6>
+        <input class = "col-sm-2 enFila" type="text" ng-model="subData.title">
       </div>
       <div class="row text-center">
-          <h6 class="titol col-sm-2">url: </h6>
-          <input class = "col-sm-2 enFila" type="text" name="url">
+          <h6 class="titol col-sm-1">url: </h6>
+          <input class = "col-sm-2 enFila" type="text" ng-model="subData.url">
       </div>
       <div class="row text-center">
-          <div class="col-sm-2">or</div>
+          <div class="col-sm-1">or</div>
           <div class="col-sm-3 hide">or</div>
 
       </div>
       <div class="row text-center">
-          <h6 class="titol col-sm-2">text:</h6>
-          <textarea class = "col-sm-3 enFila" name="text"></textarea>
+          <h6 class="titol col-sm-1">text:</h6>
+          <textarea class = "col-sm-3 enFila" ng-model="subData.text"></textarea>
       </div>
       <br>
       <div class="row text-center">
-          <div class="col-sm-3 col-sm-offset-1">
-              <button type="submit" ng-click="postNew(title, text, url)"> submit </button>
+          <div class="col-sm-1 hide">or</div>
+          <div class="col-sm-3">
+              <button type="submit"> Submit </button>
           </div>
       </div>
   </form>
 </div>
-
 
 <!--<form>
       <input type="text" ng-model="formData.desc" placeholder="Enter desc" />

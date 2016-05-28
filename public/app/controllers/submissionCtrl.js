@@ -166,10 +166,11 @@ angular.module('submissionCtrl', [])
 .controller('newSubmissionCtrl', function($scope, $rootScope, $http, $location) {
 
     $scope.submission = {};
+    $scope.subData = {};
 
-    $scope.postNew = function(title, text, url) {
+    $scope.postNew = function() {
         if(!text) {
-            $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + title + '&url=' + url, {
+            $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + $scope.subData.title + '&url=' + $scope.subData.url, {
                 headers: {'X-Api-Key': $rootScope.token}
             })
             .success(function(data) {
@@ -177,7 +178,7 @@ angular.module('submissionCtrl', [])
             });
         }
         else if(!url) {
-            $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + title + '&text=' + text, {
+            $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + $scope.subData.title + '&text=' + $scope.subData.text, {
                 headers: {'X-Api-Key': $rootScope.token}
             })
             .success(function(data) {
