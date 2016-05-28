@@ -25,7 +25,7 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
             $scope.name = data.name;
             console.log("Id: " + $scope.id);
             console.log("Name: " + $scope.name);
-            var url = 'https://joox-new-nemenosfe.c9users.io/api/login';
+            var url = 'https://joox-new-nemenosfe.c9users.io/api/login.json';
             var data = $.param({
                 uid: $scope.id,
                 name: $scope.name
