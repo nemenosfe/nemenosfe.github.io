@@ -1,26 +1,25 @@
 <div class="container">
   <form >
       <div class="row text-center">
-        <h6 class="titol col-sm-1 text-center">title:</h6>
+        <h6 class="titol col-sm-2 text-center">title:</h6>
         <input class = "col-sm-2 enFila" type="text" name="title">
       </div>
       <div class="row text-center">
-          <h6 class="titol col-sm-1">url: </h6>
+          <h6 class="titol col-sm-2">url: </h6>
           <input class = "col-sm-2 enFila" type="text" name="url">
       </div>
       <div class="row text-center">
-          <div class="col-sm-1">or</div>
+          <div class="col-sm-2">or</div>
           <div class="col-sm-3 hide">or</div>
 
       </div>
       <div class="row text-center">
-          <h6 class="titol col-sm-1">text:</h6>
+          <h6 class="titol col-sm-2">text:</h6>
           <textarea class = "col-sm-3 enFila" name="text"></textarea>
       </div>
       <br>
       <div class="row text-center">
-          <div class="col-sm-1 hide">or</div>
-          <div class="col-sm-3">
+          <div class="col-sm-3 col-sm-offset-1">
               <button type="submit" ng-click="postNew(title, text, url)"> submit </button>
           </div>
       </div>

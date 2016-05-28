@@ -12,13 +12,22 @@
       <h6 class="titol col-sm-2"><textarea></textarea></h6>
   </div>
   <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-offset">
+
+      </div>
+      <div class="col-sm-2 col-sm-offset-2">
         <input type="submit" name="addSubmission">
       </div>
   </div>
   <br>
-  <div>
-      <p><a ng-href="/users/{{ user.id }}/submissions"> Submissions </a></p>
-      <p><a ng-href="/users/{{ user.id }}/comments"> Comments </a></p>
+  <div class = "row">
+      <div class="col-sm-2 col-sm-offset-2">
+          <a ng-href="/users/{{ user.id }}/submissions"> Submissions </a>
+      </div>
+  </div>
+  <div class = "row">
+      <div class="col-sm-2 col-sm-offset-2">
+          <a ng-href="/users/{{ user.id }}/comments"> Comments </a>
+      </div>
   </div>
 </div>
