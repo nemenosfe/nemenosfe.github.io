@@ -3,6 +3,7 @@ angular.module('userCtrl', [])
 .controller('threadsCtrl', function($http, $scope, $routeParams, $rootScope) {
 
     $scope.threads = {};
+    console.log($rootScope.token);
     $http.get('https://still-earth-13848.herokuapp.com/api/threads/' + $routeParams.id, {
         headers: {'X-Api-Key': $rootScope.token}
     })
