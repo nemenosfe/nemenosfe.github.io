@@ -68,13 +68,13 @@ angular.module('submissionCtrl', [])
 
     $scope.postNew = function(title, text, url) {
         if(!text) {
-            $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + title + '&url' + url + '.json')
+            $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + title + '&url=' + url + '.json')
             .success(function(data) {
                 $scope.submission = data;
             });
         }
         else if(!url) {
-            $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + title + '&text' + text + '.json')
+            $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + title + '&text=' + text + '.json')
             .success(function(data) {
                 $scope.submission = data;
             });

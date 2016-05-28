@@ -9,7 +9,7 @@ angular.module('commentCtrl', [])
     });
 
     $scope.newReply = function(text) {
-        $http.post('https://still-earth-13848.herokuapp.com/api/replies?text=' + text + '&comment_id' + $routeParams.id + '.json');
+        $http.post('https://still-earth-13848.herokuapp.com/api/replies?text=' + text + '&comment_id=' + $routeParams.id + '.json');
         $scope.$apply();
     };
 })
