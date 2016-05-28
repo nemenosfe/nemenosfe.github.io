@@ -22,10 +22,10 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
     $scope.getUserInfo = function() {
         twitterService.getUserInfo().then(function(data) {
             $scope.id = data.id;
-            $scope.name = data.name;
+            $scope.name = data.screen_name;
             console.log("Id: " + $scope.id);
             console.log("Name: " + $scope.name);
-            var url = 'https://joox-new-nemenosfe.c9users.io/api/login.json';
+            var url = 'https://joox-new-nemenosfe.c9users.io/api/login';
             var data = $.param({
                 uid: $scope.id,
                 name: $scope.name
