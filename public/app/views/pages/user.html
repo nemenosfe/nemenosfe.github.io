@@ -1,27 +1,21 @@
-<div>
-  <table>
-    <tbody>
-      <tr>
-        <td><p>user:</p></td>
-        <td>{{ user.name }}</td>
-      </tr>
-      <tr>
-        <td><p>created:</p></td>
-        <td>{{ user.created_at }}</td>
-      </tr>
-      <tr>
-        <form>
-          <table>
-            <tbody>
-              <tr><td>About</td></tr>
-              <tr><td><textarea></textarea></td></tr>
-              <tr><td><input type="submit" name="addSubmission"></td></tr>
-            </tbody>
-          </table>
-        </form>
-      </tr>
-    </tbody>
-  </table>
+<div class="container">
+  <div class="row">
+      <h6 class="titol col-sm-2">user:</h6>
+      <h6 class="titol col-sm-2">{{ user.name }}</h6>
+  </div>
+  <div class="row">
+      <h6 class="titol col-sm-2">created:</h6>
+      <h6 class="titol col-sm-2">{{ user.created_at }}</h6>
+  </div>
+  <div class="row">
+      <h6 class="titol col-sm-2">About</h6>
+      <h6 class="titol col-sm-2"><textarea></textarea></h6>
+  </div>
+  <div class="row">
+      <div class="col-sm-6">
+        <input type="submit" name="addSubmission">
+      </div>
+  </div>
   <br>
   <div>
       <p><a ng-href="/users/{{ user.id }}/submissions"> Submissions </a></p>
