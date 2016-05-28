@@ -12,13 +12,13 @@ angular.module('userCtrl', [])
 
     $scope.likeComment = function(id) {
         $http.put('https://still-earth-13848.herokuapp.com/api/comments/' + id + '/like', {
-            headers: {'X-Api-Key': 'W4cMakBP2LelZFjtEEzM0gtt'}
+            headers: {'X-Api-Key': $rootScope.token}
         })
     };
 
     $scope.likeReply = function(id) {
         $http.put('https://still-earth-13848.herokuapp.com/api/replies/' + id + '/like', {
-            headers: {'X-Api-Key': 'W4cMakBP2LelZFjtEEzM0gtt'}
+            headers: {'X-Api-Key': $rootScope.token}
         });
     };
     $scope.getTime = function(date) {
