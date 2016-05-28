@@ -1,6 +1,6 @@
 <div>
   <div ng-repeat="submission in ask">
-      <h1 class = "titol">{{size - $index - 1}}. <a ng-href="/submissions/{{ submission.id }}">{{ submission.title }}</a></h1>
+      <h1 class = "titol">{{$index + 1}}. <a ng-href="/submissions/{{ submission.id }}">{{ submission.title }}</a></h1>
       <h1 class = "info"> {{ submission.points }} points by <a ng-href="/users/{{ submission.user_id }}">{{ submission.nom }}</a> {{ submission.created_at }} hours ago </h1>
   </div>
 </div>
