@@ -169,13 +169,17 @@ angular.module('submissionCtrl', [])
 
     $scope.postNew = function(title, text, url) {
         if(!text) {
-            $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + title + '&url=' + url)
+            $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + title + '&url=' + url, {
+                headers: {'X-Api-Key': $rootScope.token}
+            })
             .success(function(data) {
                 $scope.submission = data;
             });
         }
         else if(!url) {
-            $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + title + '&text=' + text)
+            $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + title + '&text=' + text, {
+                headers: {'X-Api-Key': $rootScope.token}
+            })
             .success(function(data) {
                 $scope.submission = data;
             });
