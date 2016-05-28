@@ -2,28 +2,30 @@
     <div class= "col-sm-6">
         <h2>comments</h2>
         <div ng-repeat="comment in threads.comments">
-            <h1 class="info">
+            <h1 class="titol">
                 <a href="#" ng-click="likeComment(comment.id)" class="enFila">
                     <img src= "../../../assets/images/up.png"></img>
                 </a>
+                {{ comment.text }} </h1>
+            <h1 class="info">
                 {{comment.points}} point(s) by falta logejar
                 <a ng-href="users/{{ comment.user_id }}">{{ comment.nom }}</a>
                 {{getTime(comment.created_at)}} ago
             </h1>
-            <h1 class="titol"> {{ comment.text }} </h1>
         </div>
     </div>
     <div class= "col-sm-6">
         <h2>replies</h2>
         <div ng-repeat="reply in threads.replies">
-            <h1 class="info">
+            <h1 class="titol">
                 <a href="#" ng-click="likeReply(reply.id)" class="enFila">
                     <img src= "../../../assets/images/up.png"></img>
                 </a>
+                 {{ reply.text }} </h1>
+            <h1 class="info">
                 nom del loged
                 {{getTime(reply.created_at)}} ago | at: {{reply.nomSubmission}}
             </h1>
-            <h1 class="titol"> {{ reply.text }} </h1>
         </div>
     </div>
 </div>
