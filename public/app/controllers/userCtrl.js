@@ -3,7 +3,7 @@ angular.module('userCtrl', [])
 .controller('threadsCtrl', function($http, $scope, $routeParams) {
 
     $scope.threads = {};
-    $http.get('https://still-earth-13848.herokuapp.com/api/threads/' + $routeParams.id + '.json', {
+    $http.get('https://still-earth-13848.herokuapp.com/api/threads/' + $routeParams.id, {
         headers: {'X-Api-Key': 'W4cMakBP2LelZFjtEEzM0gtt'}
     })
     .success(function(data) {
@@ -57,7 +57,7 @@ angular.module('userCtrl', [])
 .controller('userCtrl', function($http, $scope, $routeParams) {
 
     $scope.user = {};
-    $http.get('https://still-earth-13848.herokuapp.com/api/users/' + $routeParams.id + '.json')
+    $http.get('https://still-earth-13848.herokuapp.com/api/users/' + $routeParams.id)
     .success(function(data) {
         $scope.user = data;
     });

@@ -5,7 +5,7 @@ angular.module('submissionCtrl', [])
     $scope.submissions = {};
     $scope.size = {};
 
-    $http.get('https://still-earth-13848.herokuapp.com/api/submissions.json')
+    $http.get('https://still-earth-13848.herokuapp.com/api/submissions')
     .success(function(data) {
         console.log(data);
         $scope.submissions = data.reverse();
@@ -54,7 +54,7 @@ angular.module('submissionCtrl', [])
     $scope.ask = {};
     $scope.size = {};
 
-    $http.get('https://still-earth-13848.herokuapp.com/api/ask.json')
+    $http.get('https://still-earth-13848.herokuapp.com/api/ask')
     .success(function(data) {
         $scope.ask = data;
         $scope.size = Object.keys($scope.ask).length + 1;
@@ -127,7 +127,7 @@ angular.module('submissionCtrl', [])
         return Math.floor(seconds) + " seconds";
     };
 
-    $http.get('https://still-earth-13848.herokuapp.com/api/submissions/' + $routeParams.id + '.json')
+    $http.get('https://still-earth-13848.herokuapp.com/api/submissions/' + $routeParams.id)
     .success(function(data) {
         $scope.submission = data;
         $scope.correctData = $scope.getTime($scope.submission.created_at);
@@ -138,7 +138,7 @@ angular.module('submissionCtrl', [])
     };
 
     $scope.newComment = function(text) {
-        $http.post('https://still-earth-13848.herokuapp.com/api/comments?text=' + text + '&submission_id=' + $routeParams.id + '.json');
+        $http.post('https://still-earth-13848.herokuapp.com/api/comments?text=' + text + '&submission_id=' + $routeParams.id);
     };
 
     $scope.likeComment = function(id) {
@@ -158,7 +158,7 @@ angular.module('submissionCtrl', [])
 .controller('userSubmissionsCtrl', function($http, $scope, $routeParams) {
 
     $scope.submissions = {};
-    $http.get('https://still-earth-13848.herokuapp.com/api/users/' + $routeParams.id + '/submissions.json')
+    $http.get('https://still-earth-13848.herokuapp.com/api/users/' + $routeParams.id + '/submissions')
     .success(function(data) {
         $scope.submissions = data.reverse();
     });
@@ -171,13 +171,13 @@ angular.module('submissionCtrl', [])
 
     $scope.postNew = function(title, text, url) {
         if(!text) {
-            $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + title + '&url=' + url + '.json')
+            $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + title + '&url=' + url)
             .success(function(data) {
                 $scope.submission = data;
             });
         }
         else if(!url) {
-            $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + title + '&text=' + text + '.json')
+            $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + title + '&text=' + text)
             .success(function(data) {
                 $scope.submission = data;
             });
