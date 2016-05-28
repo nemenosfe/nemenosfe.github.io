@@ -37,7 +37,7 @@ angular.module('submissionCtrl', [])
         $scope.correctData = getDate($scope.submission.created_at);
     });
 
-    $scope.getDate(data) = function() {
+    $scope.getDate = function(data) {
         var d = new Date(data.substring(0,4),(data.substring(5,7))-1,data.substring(8,10),data.substring(11,13),data.substring(14,16),data.substring(17,19),data.substring(20,23));
         console.log(data);
         console.log(d);
