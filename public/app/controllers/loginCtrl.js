@@ -1,6 +1,6 @@
 angular.module('loginCtrl', [])
 
-.controller('loginCtrl', function($scope, auth) {
+.controller('loginCtrl', function($scope, auth, store) {
 
     $scope.auth = auth;
     $scope.token = store.get('token');
