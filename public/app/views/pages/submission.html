@@ -16,10 +16,10 @@
   </div>
   <div>
     <div ng-repeat="comment in submission.comments">
-      <h1 class="info"><a ng-href="users/{{ submission.user_id }}"></a> <script> getTime({{comment.created_at}}) </script> hours ago</h1>
+      <h1 class="info"><a ng-href="users/{{ submission.user_id }}">{{ comment.nom }}</a> <script> getTime({{comment.created_at}}) </script> hours ago</h1>
       <h1 class="titol"> {{ comment.text }} </h1>
       <div ng-repeat="reply in comment.replies">
-        <h1 class="info">{{ reply.nom }} {{ reply.created_at }} hours ago</h1>
+        <h1 class="info"><a ng-href="users/{{ reply.user_id }}"> {{ reply.created_at }} </a> hours ago</h1>
         <h1 class="titol"> {{ reply.text }} </h1>
       </div>
     </div>
