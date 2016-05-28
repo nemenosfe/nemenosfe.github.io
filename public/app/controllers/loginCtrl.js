@@ -4,7 +4,7 @@ angular.module('loginCtrl', [])
 
     $scope.auth = auth;
     $scope.token = store.get('token');
-    console.log(token);
+    console.log($scope.token);
 
     $scope.logout = function() {
         auth.signout();
