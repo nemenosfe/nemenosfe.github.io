@@ -80,7 +80,7 @@ angular.module('submissionCtrl', [])
     };
 
     $scope.newComment = function(text) {
-        $http.post('https://still-earth-13848.herokuapp.com/api/comments?text=' + text + '&submission_id=' + $routeParams.id);
+        $http.post('https://still-earth-13848.herokuapp.com/api/comments?text=' + text + '&submission_id=' + $routeParams.id + '.json');
     };
 
     $scope.likeComment = function(id) {
@@ -94,6 +94,16 @@ angular.module('submissionCtrl', [])
     $scope.getDate = function(createdat) {
         document.getElementById('time').innerHTML=createdat;
     };
+
+})
+
+.controller('userSubmissionsCtrl', function($http, $scope, $routeParams) {
+
+    $scope.submissions = {};
+    $http.get('https://still-earth-13848.herokuapp.com/api/users/' + $routeParams.id + '/submissions.json')
+    .success(function(data) {
+        $scope.submissions = data.reverse();
+    });
 
 })
 

@@ -11,13 +11,13 @@ angular.module('userCtrl', [])
     });
 
     $scope.likeComment = function(id) {
-        $http.put('https://still-earth-13848.herokuapp.com/api/comments/' + id + '/like.json', {
+        $http.put('https://still-earth-13848.herokuapp.com/api/comments/' + id + '/like', {
             headers: {'X-Api-Key': 'W4cMakBP2LelZFjtEEzM0gtt'}
         })
     };
 
     $scope.likeReply = function(id) {
-        $http.put('https://still-earth-13848.herokuapp.com/api/replies/' + id + '/like.json', {
+        $http.put('https://still-earth-13848.herokuapp.com/api/replies/' + id + '/like', {
             headers: {'X-Api-Key': 'W4cMakBP2LelZFjtEEzM0gtt'}
         });
     };
@@ -33,16 +33,6 @@ angular.module('userCtrl', [])
     });
 
     $scope.edit = function(about) {
-        $http.put('https://still-earth-13848.herokuapp.com/api/users/' + $routeParams.id + '?about=' + about + '.json');
+        $http.put('https://still-earth-13848.herokuapp.com/api/users/' + $routeParams.id + '?about=' + about);
     };
-})
-
-.controller('userSubmissionsCtrl', function($http, $scope, $routeParams) {
-
-    $scope.submissions = {};
-    $http.get('https://still-earth-13848.herokuapp.com/api/users/' + $routeParams.id + '/submissions.json')
-    .success(function(data) {
-        $scope.submissions = data.reverse();
-    });
-
 });

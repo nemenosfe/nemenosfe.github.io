@@ -13,7 +13,7 @@
       <a href="#" ><h1 class = "info enFila"> <span id="data"> <script> var a = {{ submission.created_at }};
 			 getTimebody(a);</script></span>  hours ago </h1>
       <!-- s'ha de modificar el json builder perque torni els comments -->
-      <a ng-href="/submissions/{{ submission.id }}"><h1 class ="info enFila"> | {{ submission.comment.size }} comments</h1></a>
+      <a ng-href="/submissions/{{ submission.id }}"><h1 class ="info enFila"> | {{ submission.comments.length }} comments</h1></a>
     </div>
   </div>
 </div>
