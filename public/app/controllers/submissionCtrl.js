@@ -4,8 +4,6 @@ angular.module('submissionCtrl', [])
 
     $scope.submissions = {};
     $scope.size = {};
-    $scope.token = store.get('token');
-    console.log(token);
 
     $http.get('https://still-earth-13848.herokuapp.com/api/submissions.json')
     .success(function(data) {
