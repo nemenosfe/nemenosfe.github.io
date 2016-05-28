@@ -1,33 +1,30 @@
 <div class="container">
-  <div class="row">
+  <div class="row text-center">
       <h6 class="titol col-sm-2">user:</h6>
-      <h6 class="titol col-sm-2">{{ user.name }}</h6>
+      <h6 class="titol col-sm-3">{{ user.name }}</h6>
   </div>
-  <div class="row">
+  <div class="row text-center">
       <h6 class="titol col-sm-2">created:</h6>
-      <h6 class="titol col-sm-2">{{ user.created_at }}</h6>
+      <h6 class="titol col-sm-3">{{ user.created_at }}</h6>
   </div>
-  <div class="row">
-      <h6 class="titol col-sm-2">About</h6>
-      <h6 class="titol col-sm-2"><textarea></textarea></h6>
+  <div class="row text-center">
+      <h6 class="titol col-sm-2">about:</h6>
+      <h6 class="titol col-sm-3"><textarea></textarea></h6>
   </div>
-  <div class="row">
-      <div class="col-sm-offset">
-
-      </div>
+  <div class="row text-center">
       <div class="col-sm-2 col-sm-offset-2">
         <input type="submit" name="addSubmission">
       </div>
   </div>
   <br>
-  <div class = "row">
+  <div class = "row text-center">
       <div class="col-sm-2 col-sm-offset-2">
           <a ng-href="/users/{{ user.id }}/submissions"> Submissions </a>
       </div>
   </div>
-  <div class = "row">
+  <div class = "row text-center">
       <div class="col-sm-2 col-sm-offset-2">
-          <a ng-href="/users/{{ user.id }}/comments"> Comments </a>
+          <a ng-href="/users/{{ user.id }}/comments">Comments </a>
       </div>
   </div>
 </div>
