@@ -12,12 +12,18 @@ angular.module('submissionCtrl', [])
         $scope.size = Object.keys($scope.submissions).length + 1;
     });
 
+    $scope.likeSubmission = function(id) {
+        $http.put('https://still-earth-13848.herokuapp.com/api/submissions/' + id + '/like', {
+            headers: {'X-Api-Key': 'W4cMakBP2LelZFjtEEzM0gtt'}
+        })
+    };
+
 })
 
 .controller('askCtrl', function($scope, $http) {
 
     $scope.ask = {};
-    $scope.size ={};
+    $scope.size = {};
 
     $http.get('https://still-earth-13848.herokuapp.com/api/ask.json')
     .success(function(data) {
