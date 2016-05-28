@@ -11,8 +11,7 @@
       <h1 class = "info enFila"> {{ submission.points }} points by </h1>
       <a ng-href="/users/{{ submission.user_id }}" ><h1 class = "info enFila"> {{submission.nom}}</h1>
       <a href="#" ><h1 class = "info enFila"> {{getTime(submission.created_at)}} ago </h1>
-      <!-- s'ha de modificar el json builder perque torni els comments -->
-      <a ng-href="/submissions/{{ submission.id }}"><h1 class ="info enFila"> | {{submission.comments.length}} comments</h1></a>
+      <a ng-href="/submissions/{{ submission.id }}"><h1 class ="info enFila"> | {{submission.numComments}} comments</h1></a>
     </div>
   </div>
 </div>

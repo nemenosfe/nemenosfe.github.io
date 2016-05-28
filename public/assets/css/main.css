@@ -92,6 +92,9 @@ h1.num {
     margin-right: 0;
     margin-bottom: 0;
   }
+  .navbar-brand {
+      text-align: left;
+  }
 }
 
 .enFila {
