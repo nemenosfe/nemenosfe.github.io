@@ -100,7 +100,14 @@ h1.num {
     margin-right: 0;
     margin-bottom: 0;
   }
+  .nav {
+      width: 100%;
+  }
   .navbar-brand {
       text-align: left;
+  }
+  .login {
+      margin-left: -15px;
+      padding: -5px;
   }
 }
