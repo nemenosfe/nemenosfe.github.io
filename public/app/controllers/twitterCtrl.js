@@ -30,7 +30,12 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
                 uid: $scope.id,
                 name: $scope.name
             })
-            $http.post(url, data)
+            var config = {
+                headers : {
+                    'Content-Type': 'application/json'
+                }
+            }
+            $http.post(url, data, config)
                 .then(
                     function(response) {
                         console.log("Token: " + JSON.stringify(response));
