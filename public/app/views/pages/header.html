@@ -1,4 +1,4 @@
-<header ng-controller="headerCtrl">
+<header>
 <nav class="navbar navbar-default" role="navigation">
   <div class = "navbar-header">
     <button class="navbar-toggle" data-toggle="collapse"
@@ -13,9 +13,9 @@
     <a class="navbar-brand" href="/">Joox News</a>
   </div>
 
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
+  <div class="collapse navbar-collapse navbar-ex1-collapse" ng-controller="headerCtrl">
     <ul class="nav navbar-nav navbar-left">
-      <li><a class="navbar-brand" ng-href="/threads/{{userid}}">  threads </a></li>
+      <li><a class="navbar-brand" ng-href="/threads/{{ userid }}">  threads </a></li>
     </ul>
     <ul class="nav navbar-nav navbar-left">
       <li><a class="navbar-brand" href="/ask">   ask </a></li>
