@@ -76,23 +76,19 @@ angular.module('submissionCtrl', [])
     });
 
     $scope.likeSubmission = function() {
-        $http.put('https://still-earth-13848.herokuapp.com/api/submissions/' + $routeParams.id + '/like.json');
-        $scope.$apply();
+        $http.put('https://still-earth-13848.herokuapp.com/api/submissions/' + $routeParams.id + '/like');
     };
 
     $scope.newComment = function(text) {
-        $http.post('https://still-earth-13848.herokuapp.com/api/comments?text=' + text + '&submission_id=' + $routeParams.id + '.json');
-        $scope.$apply();
+        $http.post('https://still-earth-13848.herokuapp.com/api/comments?text=' + text + '&submission_id=' + $routeParams.id);
     };
 
     $scope.likeComment = function(id) {
-        $http.put('https://still-earth-13848.herokuapp.com/api/comments/' + id + '/like.json');
-        $scope.$apply();
+        $http.put('https://still-earth-13848.herokuapp.com/api/comments/' + id + '/like');
     };
 
     $scope.likeReply = function(id) {
-        $http.put('https://still-earth-13848.herokuapp.com/api/replies/' + id + '/like.json');
-        $scope.$apply();
+        $http.put('https://still-earth-13848.herokuapp.com/api/replies/' + id + '/like');
     };
 
     $scope.getDate = function(createdat) {
