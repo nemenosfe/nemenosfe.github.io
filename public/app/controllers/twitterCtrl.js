@@ -25,15 +25,21 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
             $scope.name = data.name;
             console.log("Id: " + $scope.id);
             console.log("Name: " + $scope.name);
+            var url = 'https://joox-new-nemenosfe.c9users.io/api/login';
             var data = $.param({
                 uid: $scope.id,
                 name: $scope.name
-            });
-            $http.post('https://joox-new-nemenosfe.c9users.io/api/login', data)
-            .success(function(data) {
-                console.log("Token que torna: " + data);
-            });
-        })
+            })
+            $http.post(url, data)
+                .then(
+                    function(response) {
+                        console.log("Token: " + response);
+                    },
+                    function(response) {
+                        console.log("Error: " + response);
+                    }
+                );
+            })
     }
 
     //sign out clears the OAuth cache, the user will have to reauthenticate when returning
