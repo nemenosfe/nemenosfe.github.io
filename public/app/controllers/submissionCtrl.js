@@ -163,7 +163,7 @@ angular.module('submissionCtrl', [])
 
 })
 
-.controller('newSubmissionCtrl', function($scope, $rootScope, $http, $locationProvider) {
+.controller('newSubmissionCtrl', function($scope, $rootScope, $http, $location) {
 
     $scope.submission = {};
 
