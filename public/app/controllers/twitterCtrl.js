@@ -10,7 +10,6 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
                 //if the authorization is successful, hide the connect button and display the tweets
                 $('#connectButton').fadeOut(function() {
                     $('#getTimelineButton, #signOut').fadeIn();
-                    $scope.refreshTimeline();
                     $scope.connectedTwitter = true;
                     console.log($q.id);
                 });
