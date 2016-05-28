@@ -34,6 +34,7 @@ angular.module('submissionCtrl', [])
     $http.get('https://still-earth-13848.herokuapp.com/api/submissions/' + $routeParams.id + '.json')
     .success(function(data) {
         $scope.submission = data;
+        $scope.correctData = getDate($scope.submission.created_at);
     });
 
     $scope.likeSubmission = function() {
