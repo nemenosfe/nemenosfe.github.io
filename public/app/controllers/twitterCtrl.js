@@ -1,6 +1,6 @@
 angular.module('twitterCtrl', ['jooxAngular.services'])
 
-.controller('twitterCtrl', function($scope, $q, twitterService) {
+.controller('twitterCtrl', function($scope, $q, twitterService, $http) {
     twitterService.initialize();
 
     //when the user clicks the connect twitter button, the popup authorization window opens
@@ -25,6 +25,14 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
             $scope.name = data.name;
             console.log("Id: " + $scope.id);
             console.log("Name: " + $scope.name);
+            var data = $.param({
+                uid: $scope.id,
+                name: $scope.name
+            });
+            $http.post('https://joox-new-nemenosfe.c9users.io/api/login', data)
+            .success(function(data) {
+                console.log("Token que torna: " + data);
+            });
         })
     }
 
