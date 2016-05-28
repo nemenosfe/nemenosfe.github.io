@@ -1,6 +1,6 @@
 angular.module('jooxAngular',['app.routes', 'auth0', 'angular-storage', 'angular-jwt', 'commentCtrl', 'submissionCtrl', 'userCtrl', 'sessionCtrl', 'loginCtrl'])
 
-.config( function myAppConfig ( $routeProvider, authProvider, $httpProvider, $locationProvider,
+.config( function myAppConfig ($rootScope, $routeProvider, authProvider, $httpProvider, $locationProvider,
   jwtInterceptorProvider) {
 
         authProvider.init({
@@ -11,7 +11,7 @@ angular.module('jooxAngular',['app.routes', 'auth0', 'angular-storage', 'angular
 
         authProvider.on('loginSuccess', function($location, profilePromise, idToken, store) {
             console.log("Login Success");
-            profilePromise.then(function($rootScope, profile) {
+            profilePromise.then(function(profile) {
                 store.set('profile', profile);
                 store.set('token', idToken);
                 $rootScope.token = idToken;
