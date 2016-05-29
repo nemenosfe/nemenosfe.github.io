@@ -5,7 +5,7 @@ angular.module('submissionCtrl', [])
     $scope.submissions = {};
     $scope.size = {};
     $scope.connected = $cookies.get('connected');
-    $scope.token = $coookies.get('api_key');
+    $scope.token = $cookies.get('api_key');
 
     $http.get('https://still-earth-13848.herokuapp.com/api/submissions')
     .success(function(data) {
