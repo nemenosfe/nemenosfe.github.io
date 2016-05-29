@@ -4,6 +4,7 @@ angular.module('userCtrl', [])
 
     $scope.threads = {};
     $scope.token = $cookies.get('api_key');
+    $scope.userName = $cookies.get('userName');
     console.log($rootScope.token);
     $http.get('https://still-earth-13848.herokuapp.com/api/threads/' + $routeParams.id, {
         headers: {'X-Api-Key': $scope.token}
@@ -13,14 +14,20 @@ angular.module('userCtrl', [])
     });
 
     $scope.likeComment = function(id) {
-        $http.put('https://still-earth-13848.herokuapp.com/api/comments/' + id + '/like', {
+        $http.put('https://still-earth-13848.herokuapp.com/api/comments/' + id + '/like',null , {
             headers: {'X-Api-Key': $scope.token}
         })
+        .success (function(data){
+            //Refresh
+        });
     };
 
     $scope.likeReply = function(id) {
-        $http.put('https://still-earth-13848.herokuapp.com/api/replies/' + id + '/like', {
+        $http.put('https://still-earth-13848.herokuapp.com/api/replies/' + id + '/like',null , {
             headers: {'X-Api-Key': $scope.token}
+        })
+        .success (function(data){
+            //Refresh
         });
     };
     $scope.getTime = function(date) {

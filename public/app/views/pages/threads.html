@@ -8,7 +8,7 @@
                 </a>
                 {{ comment.text }} </h1>
             <h1 class="info">
-                {{comment.points}} point(s) by falta logejar
+                {{comment.points}} point(s) by {{userName}}
                 <a ng-href="users/{{ comment.user_id }}">{{ comment.nom }}</a>
                 {{getTime(comment.created_at)}} ago
             </h1>
@@ -23,7 +23,8 @@
                 </a>
                  {{ reply.text }} </h1>
             <h1 class="info">
-                nom del loged
+                {{reply.points}} point(s)
+                {{userName}}
                 {{getTime(reply.created_at)}} ago | at: {{reply.nomSubmission}}
             </h1>
         </div>
