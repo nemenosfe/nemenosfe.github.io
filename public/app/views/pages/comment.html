@@ -6,16 +6,17 @@
     <h1 class="titol"> {{ comment.text }}</h1>
   </div>
   <br>
-  <div>
-    <form ng-submit="newReply" class="form-group">
+  <div ng-if="connected=='true'">
+    <form ng-submit="newReply()" class="form-group">
       <br>
-      <textarea class="form-control" rows="3" ng-model="subData.text"></textarea>
+      <textarea class="form-control" rows="3" ng-model="commentData.text"></textarea>
       <br>
       <button type="submit" class="btn btn-default">Add Reply</button>
       <br>
     </form>
   </div>
   <div ng-if="connected=='false'">
+    <textarea class="form-control" rows="3" ng-model="commentData.text"></textarea>
     <h2>Per comentar cal estar logejat!</h2>
   </div>
 </div>
