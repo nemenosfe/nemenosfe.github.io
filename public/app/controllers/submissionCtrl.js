@@ -9,7 +9,7 @@ angular.module('submissionCtrl', [])
 
     $http.get('https://still-earth-13848.herokuapp.com/api/submissions')
     .success(function(data) {
-        $scope.submissions = data.reverse();
+        $scope.submissions = data;
         $scope.size = Object.keys($scope.submissions).length + 1;
     });
 
