@@ -1,16 +1,24 @@
 angular.module('commentCtrl', [])
 
-.controller('commentCtrl', function($scope, $http, $routeParams) {
+.controller('commentCtrl', function($cookies, $cookieStore, $scope, $http, $routeParams) {
 
     $scope.comment = {};
+    $scope.connected = $cookies.get('connected');
+
     $http.get('https://still-earth-13848.herokuapp.com/api/comments/' + $routeParams.id)
     .success(function(data) {
         $scope.comment = data;
     });
 
     $scope.newReply = function(text) {
-        $http.post('https://still-earth-13848.herokuapp.com/api/replies?text=' + text + '&comment_id=' + $routeParams.id);
-        $scope.$apply();
+        $http.post('https://still-earth-13848.herokuapp.com/api/replies?text=' + text 
+            + '&comment_id=' + $routeParams.id, null, {
+            headers: {'X-Api-Key': $scope.token}
+        })
+        .success(function(data){
+
+        };
+
     };
 
     $scope.getTime = function(date) {

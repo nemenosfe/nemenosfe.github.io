@@ -99,7 +99,7 @@ angular.module('submissionCtrl', [])
 
 })
 
-.controller('singleSubmissionCtrl', function($scope, $http, $routeParams, $cookies, $cookieStore, $window, $timeout) {
+.controller('singleSubmissionCtrl', function($scope, $http, $routeParams, $cookies, $cookieStore, $window) {
 
     $scope.submission = {};
     $scope.subData = {};
@@ -146,7 +146,7 @@ angular.module('submissionCtrl', [])
     });
 
     $scope.likeSubmission = function() {
-        $http.put('https://still-earth-13848.herokuapp.com/api/submissions/' + id + '/like',null , {
+        $http.put('https://still-earth-13848.herokuapp.com/api/submissions/' + $routeParams.id + '/like', {
             headers: {'X-Api-Key': $scope.token}
         })
         .success (function(data){
@@ -171,21 +171,11 @@ angular.module('submissionCtrl', [])
   };
 
     $scope.likeComment = function(id) {
-        $http.put('https://still-earth-13848.herokuapp.com/api/comments/' + id + '/like',null , {
-            headers: {'X-Api-Key': $scope.token}
-        })
-        .success (function(data){
-            //Refresh
-        });
+        $http.put('https://still-earth-13848.herokuapp.com/api/comments/' + id + '/like');
     };
 
     $scope.likeReply = function(id) {
-        $http.put('https://still-earth-13848.herokuapp.com/api/replies/' + id + '/like',null , {
-            headers: {'X-Api-Key': $scope.token}
-        })
-        .success (function(data){
-            //Refresh
-        });
+        $http.put('https://still-earth-13848.herokuapp.com/api/replies/' + id + '/like');
     };
 
     $scope.getDate = function(createdat) {
