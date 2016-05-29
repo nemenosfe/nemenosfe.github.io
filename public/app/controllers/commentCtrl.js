@@ -4,6 +4,7 @@ angular.module('commentCtrl', [])
 
     $scope.comment = {};
     $scope.connected = $cookies.get('connected');
+    $scope.token = $cookies.get('api_key');
 
     $http.get('https://still-earth-13848.herokuapp.com/api/comments/' + $routeParams.id)
     .success(function(data) {
@@ -17,7 +18,7 @@ angular.module('commentCtrl', [])
         })
         .success(function(data){
 
-        };
+        });
 
     };
 
