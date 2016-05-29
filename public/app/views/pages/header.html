@@ -25,12 +25,12 @@
     </ul>
     <ul class="nav navbar-nav navbar-right login">
         <div  ng-if=" connected=='false'" >
-            <li><a class="navbar-brand" href="/login"> login </a></li>
+            <li><a class="navbar-brand" href="/login" id="loginlogout"> login </a></li>
         </div>
         <div  ng-if=" connected=='true' " >
             <li>
                 <a class="navbar-brand" href="/login">{{userName}} |</a>
-                <a class="navbar-brand" href="/login">logout</a>
+                <a class="navbar-brand" href="/login" id="loginlogout">logout</a>
             </li>
         </div>
     </ul>
