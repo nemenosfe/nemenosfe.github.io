@@ -7,15 +7,17 @@
       <h6 class="titol col-sm-2">created:</h6>
       <h6 class="titol col-sm-3">{{ user.created_at }}</h6>
   </div>
-  <div class="row text-center">
-      <h6 class="titol col-sm-2">about:</h6>
-      <h6 class="titol col-sm-3"><textarea></textarea></h6>
-  </div>
-  <div class="row text-center">
-      <div class="col-sm-2 col-sm-offset-2">
-        <input type="submit" name="addSubmission">
-      </div>
-  </div>
+  <form ng-submit="edit()">
+    <div class="row text-center">
+        <h6 class="titol col-sm-2">about:</h6>
+        <h6 class="titol col-sm-3" ng-model="subData.about"><textarea></textarea></h6>
+    </div>
+    <div class="row text-center">
+        <div class="col-sm-2 col-sm-offset-2">
+          <input type="submit" name="addSubmission">
+        </div>
+    </div>
+  </form>
   <br>
   <div class = "row text-center">
       <div class="col-sm-2 col-sm-offset-2">

@@ -67,12 +67,19 @@ angular.module('userCtrl', [])
 .controller('userCtrl', function($http, $scope, $routeParams) {
 
     $scope.user = {};
+    $scope.token = $cookies.get('api_key');
+    $scope.subData = {}
     $http.get('https://still-earth-13848.herokuapp.com/api/users/' + $routeParams.id)
     .success(function(data) {
         $scope.user = data;
     });
 
     $scope.edit = function(about) {
-        $http.put('https://still-earth-13848.herokuapp.com/api/users/' + $routeParams.id + '?about=' + about);
+        $http.put('https://still-earth-13848.herokuapp.com/api/users/' + $routeParams.id + '?about=' + $scope.subData.about, null, {
+            headers: {'X-Api-Key': $scope.token}
+        })
+        .success(function(data){
+
+        });
     };
 });
