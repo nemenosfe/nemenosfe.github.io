@@ -60,6 +60,10 @@ angular.module('submissionCtrl', [])
 
     $scope.ask = {};
     $scope.size = {};
+    $scope.token = $cookies.get('api_key');
+    $scope.userid = $cookies.get('userid');
+    $scope.userName = $cookies.get('userName');
+    $scope.connected = $cookies.get('connected');
 
     $http.get('https://still-earth-13848.herokuapp.com/api/ask')
     .success(function(data) {
@@ -67,6 +71,17 @@ angular.module('submissionCtrl', [])
         $scope.size = Object.keys($scope.ask).length + 1;
         $scope.connected = $cookies.get('connected');
     });
+
+    $scope.likeSubmission = function(id) {
+        console.log("Id:"+id);
+        console.log("apikey:"+$scope.token);
+        $http.put('https://still-earth-13848.herokuapp.com/api/submissions/' + id + '/like',null , {
+            headers: {'X-Api-Key': $scope.token}
+        })
+        .success (function(data){
+            //Refresh
+        });
+    };
 
     $scope.getTime = function(date) {
         var d = new Date(date.substring(0,4),(date.substring(5,7))-1,date.substring(8,10),date.substring(11,13),date.substring(14,16),date.substring(17,19),date.substring(20,23));

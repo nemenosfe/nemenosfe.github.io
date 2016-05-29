@@ -5,6 +5,8 @@ angular.module('userCtrl', [])
     $scope.threads = {};
     $scope.token = $cookies.get('api_key');
     $scope.userName = $cookies.get('userName');
+    $scope.userid = $cookies.get('userid');
+    $scope.connected = $cookies.get('connected');
     console.log($rootScope.token);
     $http.get('https://still-earth-13848.herokuapp.com/api/threads/' + $routeParams.id, {
         headers: {'X-Api-Key': $scope.token}

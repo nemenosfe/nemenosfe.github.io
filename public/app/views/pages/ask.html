@@ -1,6 +1,6 @@
 <div class="container">
   <div ng-repeat="submission in ask">
-      <h1 class = "titol">{{$index + 1}}.
+      <h1 class = "num">{{$index + 1}}.
           <a  ng-if="connected=='true'" href="#" ng-click="likeSubmission(submission.id)" class="enFila"><img src= "../../../assets/images/up.png"></img></a>
           <a ng-href="/submissions/{{ submission.id }}"><h1 class="titol enFila">{{ submission.title }}</h1></a>
       </h1>
