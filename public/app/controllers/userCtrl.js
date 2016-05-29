@@ -1,11 +1,12 @@
 angular.module('userCtrl', [])
 
-.controller('threadsCtrl', function($http, $scope, $routeParams, $rootScope) {
+.controller('threadsCtrl', function($cookieStore, $cookies, $http, $scope, $routeParams, $rootScope) {
 
     $scope.threads = {};
+    $scope.token = $cookies.get('api_key');
     console.log($rootScope.token);
     $http.get('https://still-earth-13848.herokuapp.com/api/threads/' + $routeParams.id, {
-        headers: {'X-Api-Key': $rootScope.token}
+        headers: {'X-Api-Key': $scope.token}
     })
     .success(function(data) {
         $scope.threads = data;
@@ -13,13 +14,13 @@ angular.module('userCtrl', [])
 
     $scope.likeComment = function(id) {
         $http.put('https://still-earth-13848.herokuapp.com/api/comments/' + id + '/like', {
-            headers: {'X-Api-Key': $rootScope.token}
+            headers: {'X-Api-Key': $scope.token}
         })
     };
 
     $scope.likeReply = function(id) {
         $http.put('https://still-earth-13848.herokuapp.com/api/replies/' + id + '/like', {
-            headers: {'X-Api-Key': $rootScope.token}
+            headers: {'X-Api-Key': $scope.token}
         });
     };
     $scope.getTime = function(date) {
