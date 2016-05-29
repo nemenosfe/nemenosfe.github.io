@@ -273,7 +273,8 @@ angular.module('submissionCtrl', [])
 
     $scope.postNew = function() {
       console.log($scope.token);
-        if($scope.subData.text == "") {
+      console.log($scope.subData.text);
+        if(angular.isUndefined($scope.subData.text)) {
           console.log("primer post");
             $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + $scope.subData.title + '&url=' + $scope.subData.url, null, {
                 headers: {'X-Api-Key': $scope.token}
