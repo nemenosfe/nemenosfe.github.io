@@ -48,7 +48,7 @@ angular.module('submissionCtrl', [])
 
 })
 
-.controller('askCtrl', function($scope, $http) {
+.controller('askCtrl', function($cookies, $cookieStore, $scope, $http) {
 
     $scope.ask = {};
     $scope.size = {};
@@ -57,6 +57,7 @@ angular.module('submissionCtrl', [])
     .success(function(data) {
         $scope.ask = data;
         $scope.size = Object.keys($scope.ask).length + 1;
+        $scope.connected = $cookies.get('connected');
     });
 
     $scope.getTime = function(date) {
