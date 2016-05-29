@@ -1,9 +1,10 @@
 angular.module('submissionCtrl', [])
 
-.controller('submissionCtrl', function($scope, $http) {
+.controller('submissionCtrl', function($cookies, $cookieStore, $scope, $http) {
 
     $scope.submissions = {};
     $scope.size = {};
+    $scope.connected = $cookies.get('connected');
 
     $http.get('https://still-earth-13848.herokuapp.com/api/submissions')
     .success(function(data) {
@@ -211,24 +212,21 @@ angular.module('submissionCtrl', [])
             })
             .success(function(data) {
               $location.path("/submissions/" + data['id']);
-              //$scope.submission = data['id'];
               console.log(data['id']);
               console.log($scope.submission);
             });
         }
-        else{ //  if($scope.subData.url != "")
+        else{ 
           console.log("segon post");
             $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + $scope.subData.title + '&text=' + $scope.subData.text, null, {
                 headers: {'X-Api-Key': $scope.token}
             })
             .success(function(data) {
                 $location.path("/submissions/" + data['id']);
-                //$scope.submission = data;
                 console.log(data['id']);
                 console.log($scope.submission);
             });
         }
-        //$location.path("/submissions/" + $scope.submission);
     };
 
 });
