@@ -149,7 +149,11 @@ angular.module('submissionCtrl', [])
         })
     .success(function(data){
 
-      $scope.$apply();
+      $timeout(function() {
+        $scope.$apply();
+  // anything you want can go here and will safely be run on the next digest.
+      })
+
       //$window.location.reload();
 
     });
