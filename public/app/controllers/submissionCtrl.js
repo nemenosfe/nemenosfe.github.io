@@ -210,7 +210,7 @@ angular.module('submissionCtrl', [])
                 headers: {'X-Api-Key': $scope.token}
             })
             .success(function(data) {
-              $scope.submission = "/submissions/"+data['id'];
+              $scope.submission = data;
               console.log(data['id']);
               console.log($scope.submission);
             });
@@ -221,12 +221,12 @@ angular.module('submissionCtrl', [])
                 headers: {'X-Api-Key': $scope.token}
             })
             .success(function(data) {
-                $scope.submission = "/submissions/"+data['id'];
+                $scope.submission = data;
                 console.log(data['id']);
                 console.log($scope.submission);
             });
         }
-        $location.path($scope.submission);
+        $location.path("/submissions/" + $scope.submission.id);
     };
 
 });
