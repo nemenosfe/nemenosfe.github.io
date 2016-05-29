@@ -13,13 +13,13 @@
   </div>
 
 
-  <div class = "form-group">
+  <form ng-submit="newComment()" class = "form-group">
       <br>
-      <textarea  name="text" class="form-control" rows="4"></textarea>
+      <textarea  name="text" class="form-control" rows="4" ng-model="subData.text"></textarea>
       <br>
       <button type="submit" class="btn btn-default">Add Coment</button>  </div>
       <br>
-  <div>
+  <form>
     <div ng-repeat="comment in submission.comments">
         <h1 class="titol">
             <a ng-if="connected=='true'" href="#" ng-click="likeComment(comment.id)" class="enFila"><img src= "../../../assets/images/up.png"></img></a>
