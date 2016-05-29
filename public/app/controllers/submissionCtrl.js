@@ -1,9 +1,10 @@
 angular.module('submissionCtrl', [])
 
-.controller('submissionCtrl', function($scope, $http) {
+.controller('submissionCtrl', function($cookies, $cookieStore, $scope, $http) {
 
     $scope.submissions = {};
     $scope.size = {};
+    $scope.connected = $cookies.get('connected');
 
     $http.get('https://still-earth-13848.herokuapp.com/api/submissions')
     .success(function(data) {
@@ -12,13 +13,16 @@ angular.module('submissionCtrl', [])
     });
 
     $scope.likeSubmission = function(id) {
+        $scope.connected = $cookies.get('connected');
+        console.log($scope.connected);
         $http.put('https://still-earth-13848.herokuapp.com/api/submissions/' + id + '/like', {
             headers: {'X-Api-Key': 'W4cMakBP2LelZFjtEEzM0gtt'}
         })
     };
 
     $scope.getTime = function(date) {
-        var d = new Date(date.substring(0,4),(date.substring(5,7))-1,date.substring(8,10),date.substring(11,13),date.substring(14,16),date.substring(17,19),date.substring(20,23));
+        var d = new Date(date.substring(0,4),(date.substring(5,7))-1,date.substring(8,10),
+            date.substring(11,13),date.substring(14,16),date.substring(17,19),date.substring(20,23));
         var seconds = Math.floor((new Date() - d) / 1000);
 
         var interval = Math.floor(seconds / 31536000);
@@ -214,29 +218,28 @@ angular.module('submissionCtrl', [])
 
     $scope.postNew = function() {
       console.log($scope.token);
-        if($scope.subData.text != "") {
+        if($scope.subData.text == "") {
           console.log("primer post");
             $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + $scope.subData.title + '&url=' + $scope.subData.url, null, {
                 headers: {'X-Api-Key': $scope.token}
             })
             .success(function(data) {
-              $scope.submission = data;
+              $location.path("/submissions/" + data['id']);
               console.log(data['id']);
               console.log($scope.submission);
             });
         }
-        else{ //  if($scope.subData.url != "")
+        else{ 
           console.log("segon post");
             $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + $scope.subData.title + '&text=' + $scope.subData.text, null, {
                 headers: {'X-Api-Key': $scope.token}
             })
             .success(function(data) {
-                $scope.submission = data;
+                $location.path("/submissions/" + data['id']);
                 console.log(data['id']);
                 console.log($scope.submission);
             });
         }
-        $location.path("/submissions/" + $scope.submission.id);
     };
 
 });
