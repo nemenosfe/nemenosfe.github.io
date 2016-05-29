@@ -48,10 +48,10 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
             $('#connectButton').fadeIn();
             $scope.$apply(function() {
                 $scope.connectedTwitter = false
-                $cookies.remove('api_key', null);
-                $cookies.remove('userid', null);
-                $cookies.remove('connected', false);
-                $cookies.remove('userName', null);
+                $cookies.put('api_key', null);
+                $cookies.put('userid', null);
+                $cookies.put('connected', false);
+                $cookies.put('userName', null);
                 console.log($rootScope.token);
                 console.log($rootScope.connected);
                 console.log($rootScope.userName);
