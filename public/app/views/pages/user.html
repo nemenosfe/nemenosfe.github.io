@@ -13,15 +13,14 @@
   </div>
   <div class="row text-center">
       <h6 class="titol col-sm-2">about:</h6>
-      <h6 class="titol col-sm-3" ng-model="subData.about">{{user.about}}</h6>
+      <h6 class="titol col-sm-3">{{user.about}}</h6>
   </div>
   <div>
-    <p>{{user.about}}</p>
   </div>
   <form ng-submit="edit()">
     <div ng-if="user.id==userid" class="row text-center">
-        <h6 class="titol col-sm-2">about:</h6>
-        <h6 class="titol col-sm-3" ><textarea ng-model="subData.about" ng-value="{{user.about}}"></textarea></h6>
+        <h6 class="titol col-sm-2">edit about:</h6>
+        <h6 class="titol col-sm-3" ><textarea ng-model="subData.about"></textarea></h6>
     </div>
     <div ng-if="user.id==userid" class="row text-center">
         <div class="col-sm-3 col-sm-offset-2">
