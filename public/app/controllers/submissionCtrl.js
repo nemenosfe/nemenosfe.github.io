@@ -93,13 +93,14 @@ angular.module('submissionCtrl', [])
 
 })
 
-.controller('singleSubmissionCtrl', function($scope, $http, $routeParams, $cookies, $cookieStore) {
+.controller('singleSubmissionCtrl', function($scope, $http, $routeParams, $cookies, $cookieStore, $window) {
 
     $scope.submission = {};
     $scope.subData = {};
 
     $scope.connected = $cookies.get('connected');
     $scope.token = $cookies.get('api_key');
+
 
 
     $scope.getTime = function(date) {
