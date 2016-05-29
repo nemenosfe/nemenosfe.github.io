@@ -93,13 +93,14 @@ angular.module('submissionCtrl', [])
 
 })
 
-.controller('singleSubmissionCtrl', function($scope, $http, $routeParams, $cookies, $cookieStore) {
+.controller('singleSubmissionCtrl', function($scope, $http, $routeParams, $cookies, $cookieStore, $window) {
 
     $scope.submission = {};
     $scope.subData = {};
 
     $scope.connected = $cookies.get('connected');
     $scope.token = $cookies.get('api_key');
+
 
 
     $scope.getTime = function(date) {
@@ -143,7 +144,7 @@ angular.module('submissionCtrl', [])
     };
 
     $scope.newComment = function(text) {
-        $http.post('https://still-earth-13848.herokuapp.com/api/comments?text=' + $scope.subdata.text + '&submission_id=' + $routeParams.id,null, {
+        $http.post('https://still-earth-13848.herokuapp.com/api/comments?text=' + $scope.subData.text + '&submission_id=' + $routeParams.id,null, {
           headers: {'X-Api-Key': $scope.token}
         })
     .success(function(data){
