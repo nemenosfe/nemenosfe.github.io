@@ -273,6 +273,7 @@ angular.module('submissionCtrl', [])
 
     $scope.postNew = function() {
       console.log($scope.token);
+      console.log($scope.subData.text);
         if($scope.subData.text == "") {
           console.log("primer post");
             $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + $scope.subData.title + '&url=' + $scope.subData.url, null, {
