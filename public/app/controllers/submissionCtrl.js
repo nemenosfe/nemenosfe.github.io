@@ -158,7 +158,8 @@ angular.module('submissionCtrl', [])
         })
     .success(function(data){
 
-      $window.location.reload();
+      $scope.$apply();
+      //$window.location.reload();
 
     });
   };
