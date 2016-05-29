@@ -53,13 +53,29 @@ angular.module('commentCtrl', [])
     };
 })
 
-.controller('userCommentsCtrl', function($http, $scope, $routeParams) {
+.controller('userCommentsCtrl', function($cookies, $cookieStore, $http, $scope, $routeParams) {
 
     $scope.comments = {};
+
+    $scope.connected = $cookies.get('connected');
+    $scope.token = $cookies.get('api_key');
+    
+    $scope.likeComment = function(id) {
+        $http.put('https://still-earth-13848.herokuapp.com/api/comments/' + id + '/like',null , {
+            headers: {'X-Api-Key': $scope.token}
+        })
+        .success (function(data){
+            //Refresh
+        });
+    };
+
     $http.get('https://still-earth-13848.herokuapp.com/api/users/' + $routeParams.id + '/comments')
     .success(function(data) {
         $scope.comments = data;
     });
+
+
+
     $scope.getTime = function(date) {
         var d = new Date(date.substring(0,4),(date.substring(5,7))-1,date.substring(8,10),date.substring(11,13),date.substring(14,16),date.substring(17,19),date.substring(20,23));
 

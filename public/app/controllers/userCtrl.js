@@ -68,6 +68,9 @@ angular.module('userCtrl', [])
 
     $scope.user = {};
     $scope.token = $cookies.get('api_key');
+    $scope.userName = $cookies.get('userName');
+    $scope.userid = $cookies.get('userid');
+    $scope.connected = $cookies.get('connected');
     $scope.subData = {}
     $http.get('https://still-earth-13848.herokuapp.com/api/users/' + $routeParams.id)
     .success(function(data) {

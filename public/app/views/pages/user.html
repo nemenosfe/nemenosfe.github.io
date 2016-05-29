@@ -7,7 +7,7 @@
       <h6 class="titol col-sm-2">created:</h6>
       <h6 class="titol col-sm-3">{{getTime(user.created_at)}} ago</h6>
   </div>
-  <div  class="row text-center"> <!-- fer el ngif -->
+  <div ng-if="user.id==userid" class="row text-center"> <!-- fer el ngif -->
       <h6 class="titol col-sm-2">Api KEY:</h6>
       <h6 class="titol col-sm-3">{{ token }}</h6>
   </div>
