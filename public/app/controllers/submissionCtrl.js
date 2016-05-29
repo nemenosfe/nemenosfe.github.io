@@ -14,6 +14,8 @@ angular.module('submissionCtrl', [])
     });
 
     $scope.likeSubmission = function(id) {
+        console.log("Id:"+id);
+        console.log("apikey:"+$scope.token);
         $http.put('https://still-earth-13848.herokuapp.com/api/submissions/' + id + '/like', {
             headers: {'X-Api-Key': $scope.token}
         })
