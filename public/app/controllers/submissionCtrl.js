@@ -166,6 +166,7 @@ angular.module('submissionCtrl', [])
         })
         .success (function(data){
             //Refresh
+            $scope.$apply();
         });
     };
 
@@ -174,12 +175,7 @@ angular.module('submissionCtrl', [])
           headers: {'X-Api-Key': $scope.token}
         })
     .success(function(data){
-
-      $timeout(function() {
         $scope.$apply();
-  // anything you want can go here and will safely be run on the next digest.
-      })
-
       //$window.location.reload();
 
     });
