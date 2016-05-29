@@ -13,13 +13,16 @@ angular.module('submissionCtrl', [])
     });
 
     $scope.likeSubmission = function(id) {
+        $scope.connected = $cookies.get('connected');
+        console.log($scope.connected);
         $http.put('https://still-earth-13848.herokuapp.com/api/submissions/' + id + '/like', {
             headers: {'X-Api-Key': 'W4cMakBP2LelZFjtEEzM0gtt'}
         })
     };
 
     $scope.getTime = function(date) {
-        var d = new Date(date.substring(0,4),(date.substring(5,7))-1,date.substring(8,10),date.substring(11,13),date.substring(14,16),date.substring(17,19),date.substring(20,23));
+        var d = new Date(date.substring(0,4),(date.substring(5,7))-1,date.substring(8,10),
+            date.substring(11,13),date.substring(14,16),date.substring(17,19),date.substring(20,23));
         var seconds = Math.floor((new Date() - d) / 1000);
 
         var interval = Math.floor(seconds / 31536000);
