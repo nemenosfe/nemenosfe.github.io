@@ -205,13 +205,28 @@ angular.module('submissionCtrl', [])
 
 })
 
-.controller('userSubmissionsCtrl', function($http, $scope, $routeParams) {
+.controller('userSubmissionsCtrl', function($cookies, $cookieStore, $http, $scope, $routeParams) {
 
     $scope.submissions = {};
+
+    $scope.connected = $cookies.get('connected');
+    $scope.token = $cookies.get('api_key');
+
     $http.get('https://still-earth-13848.herokuapp.com/api/users/' + $routeParams.id + '/submissions')
     .success(function(data) {
         $scope.submissions = data.reverse();
     });
+
+    $scope.likeSubmission = function(id) {
+        console.log("Id:"+id);
+        console.log("apikey:"+$scope.token);
+        $http.put('https://still-earth-13848.herokuapp.com/api/submissions/' + id + '/like',null , {
+            headers: {'X-Api-Key': $scope.token}
+        })
+        .success (function(data){
+            //Refresh
+        });
+    };
 
     $scope.getTime = function(date) {
         var d = new Date(date.substring(0,4),(date.substring(5,7))-1,date.substring(8,10),date.substring(11,13),date.substring(14,16),date.substring(17,19),date.substring(20,23));
