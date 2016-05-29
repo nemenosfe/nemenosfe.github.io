@@ -49,9 +49,9 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
             $scope.$apply(function() {
                 $scope.connectedTwitter = false
                 $cookies.remove('api_key', null);
-                $rootScope.remove('connected', null);
-                $rootScope.remove('connected', false);
-                $rootScope.remove('userName', null);
+                $cookies.remove('userid', null);
+                $cookies.remove('connected', false);
+                $cookies.remove('userName', null);
                 console.log($rootScope.token);
                 console.log($rootScope.connected);
                 console.log($rootScope.userName);
