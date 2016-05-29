@@ -1,6 +1,6 @@
 angular.module('twitterCtrl', ['jooxAngular.services'])
 
-.controller('twitterCtrl', function($cookies, $scope, $q, twitterService, $http) {
+.controller('twitterCtrl', function(, $rootScope, $cookies, $scope, $q, twitterService, $http) {
     twitterService.initialize();
 
     //when the user clicks the connect twitter button, the popup authorization window opens
@@ -33,6 +33,7 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
                 $cookies.put('userid', data['id'];
                 $cookies.put('connected', true);
                 $cookies.put('userNname', $scope.name);
+                $rootScope.connected = $cookies.get('connected');
                 console.log($cookies.get('api_key'));
                 console.log($cookies.get('connected'));
                 console.log($cookies.get('userName'));
