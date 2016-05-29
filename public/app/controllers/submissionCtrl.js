@@ -212,9 +212,10 @@ angular.module('submissionCtrl', [])
             .success(function(data) {
               $scope.submission = data['id'];
               console.log(data['id']);
+              console.log($scope.submission);
             });
         }
-        else{
+        else{ //  if($scope.subData.url != "")
           console.log("segon post");
             $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + $scope.subData.title + '&text=' + $scope.subData.text, null, {
                 headers: {'X-Api-Key': $scope.token}
@@ -222,6 +223,7 @@ angular.module('submissionCtrl', [])
             .success(function(data) {
                 $scope.submission = data['id'];
                 console.log(data['id']);
+                console.log($scope.submission);
             });
         }
         $location.path("/submissions/" + $scope.submission);
