@@ -13,13 +13,18 @@
   </div>
 
 
-  <form ng-submit="newComment()" class = "form-group">
-      <br>
-      <textarea  name="text" class="form-control" rows="4" ng-model="subData.text"></textarea>
-      <br>
-      <button type="submit" class="btn btn-default">Add Coment</button>  </div>
-      <br>
-  <form>
+  <div ng-if="connected=='true'">
+    <form ng-submit="newComment()" class = "form-group">
+        <br>
+        <textarea  name="text" class="form-control" rows="4" ng-model="subData.text"></textarea>
+        <br>
+        <button type="submit" class="btn btn-default">Add Coment</button>  </div>
+        <br>
+    </form>
+  </div>
+  <div ng-if="connected=='false'">
+    <h2>Per comentar cal estar logejat!</h2>
+  </div>
     <div class="container" ng-repeat="comment in submission.comments">
         <h1 class="titol">
             <a ng-if="connected=='true'" href="#" ng-click="likeComment(comment.id)" class="enFila"><img src= "../../../assets/images/up.png"></img></a>
