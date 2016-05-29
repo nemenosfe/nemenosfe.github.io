@@ -4,7 +4,13 @@ angular.module('headerCtrl', [])
 
     $scope.userid = $cookies.get('userid');
     $scope.userName = $cookies.get('userName');
-    $scope.connected = $cookies.get('connected');
+    if( $cookies.get('connected') == null){
+        $scope.connected = false;
+        $cookies.put('connected',false);
+    }
+    else {
+        $scope.connected = $cookies.get('connected');
+    }
     console.log($scope.connected+"****");
     console.log($scope.userName+"****");
 })
