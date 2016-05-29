@@ -10,6 +10,9 @@ angular.module('submissionCtrl', [])
     $http.get('https://still-earth-13848.herokuapp.com/api/submissions')
     .success(function(data) {
         $scope.submissions = data;
+        $scope.submissions.sort( function(a, b) {
+            return a.created_at < b.created_at;
+        });
         $scope.size = Object.keys($scope.submissions).length + 1;
     });
 
