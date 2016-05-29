@@ -13,8 +13,6 @@ angular.module('submissionCtrl', [])
     });
 
     $scope.likeSubmission = function(id) {
-        $scope.connected = $cookies.get('connected');
-        console.log($scope.connected);
         $http.put('https://still-earth-13848.herokuapp.com/api/submissions/' + id + '/like', {
             headers: {'X-Api-Key': 'W4cMakBP2LelZFjtEEzM0gtt'}
         })
