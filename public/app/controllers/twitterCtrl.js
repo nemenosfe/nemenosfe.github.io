@@ -1,6 +1,6 @@
 angular.module('twitterCtrl', ['jooxAngular.services'])
 
-.controller('twitterCtrl', function($rootScope, $scope, $q, twitterService, $http) {
+.controller('twitterCtrl', function($cookies, $scope, $q, twitterService, $http) {
     twitterService.initialize();
 
     //when the user clicks the connect twitter button, the popup authorization window opens
@@ -29,13 +29,13 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
             $http.post('https://still-earth-13848.herokuapp.com/api/login?uid=' + $scope.id + '&name=' + $scope.screen_name)
             .success(function(data) {
                 console.log(data['api_key']);
-                $rootScope.token = data['api_key'];
-                $rootScope.userid = data['id'];
-                $rootScope.connected = true;
-                $rootScope.userName = $scope.name;
-                console.log($rootScope.connected);
-                console.log($rootScope.userName);
-                console.log($rootScope.userid);
+                $cookies.put('api_key', data['api_key']);
+                $cookies.put('userid', data['id'];
+                $cookies.put('connected', true);
+                $cookies.put('userNname', $scope.name);
+                console.log($cookies.get('api_key'));
+                console.log($cookies.get('connected'));
+                console.log($cookies.get('userName'));
             })
         })
     }
@@ -47,10 +47,10 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
             $('#connectButton').fadeIn();
             $scope.$apply(function() {
                 $scope.connectedTwitter = false
-                $rootScope.token = null;
-                $rootScope.userid = null;
-                $rootScope.connected = false;
-                $rootScope.userName = null;
+                $cookies.remove('api_key', null);
+                $rootScope.remove('connected', null);
+                $rootScope.remove('connected', false);
+                $rootScope.remove('userName', null);
                 console.log($rootScope.token);
                 console.log($rootScope.connected);
                 console.log($rootScope.userName);
