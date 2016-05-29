@@ -199,7 +199,7 @@ angular.module('submissionCtrl', [])
     $scope.subData = {};
 
     $scope.connected = $cookies.get('connected');
-    $scope.token = $cookies.get('token');
+    $scope.token = $cookies.get('api_key');
 
     $scope.postNew = function() {
         if(!$scope.subData.text) {
