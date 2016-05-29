@@ -93,7 +93,7 @@ angular.module('submissionCtrl', [])
 
 })
 
-.controller('singleSubmissionCtrl', function($scope, $http, $routeParams) {
+.controller('singleSubmissionCtrl', function($scope, $http, $routeParams, $cookies, $cookieStore) {
 
     $scope.submission = {};
     $scope.subData = {};
