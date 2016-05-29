@@ -166,6 +166,7 @@ angular.module('submissionCtrl', [])
         })
         .success (function(data){
             //Refresh
+            $scope.$apply();
         });
     };
 
