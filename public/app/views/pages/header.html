@@ -14,8 +14,8 @@
   </div>
 
   <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul  ng-if="connected=='true'" class="nav navbar-nav navbar-left">
-      <li><a class="navbar-brand" ng-href="/threads/{{userid}}">  threads </a></li>
+    <ul class="nav navbar-nav navbar-left">
+      <div ng-if="connected=='true'"><li><a class="navbar-brand" ng-href="/threads/{{userid}}">  threads </a></li></div>
     </ul>
     <ul class="nav navbar-nav navbar-left">
       <li><a class="navbar-brand" href="/ask">   ask </a></li>
