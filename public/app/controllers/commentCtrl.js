@@ -13,8 +13,7 @@ angular.module('commentCtrl', [])
     });
 
     $scope.newReply = function(text) {
-        $http.post('https://still-earth-13848.herokuapp.com/api/replies?text=' + $scope.commentData.text 
-            + '&comment_id=' + $routeParams.id, null, {
+        $http.post('https://still-earth-13848.herokuapp.com/api/replies?text=' + $scope.commentData.text + '&comment_id=' + $routeParams.id, null, {
             headers: {'X-Api-Key': $scope.token}
         })
         .success(function(data){
