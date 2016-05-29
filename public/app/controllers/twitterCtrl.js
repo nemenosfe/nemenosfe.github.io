@@ -1,6 +1,6 @@
 angular.module('twitterCtrl', ['jooxAngular.services'])
 
-.controller('twitterCtrl', function(, $rootScope, $cookies, $scope, $q, twitterService, $http) {
+.controller('twitterCtrl', function($rootScope, $cookies, $scope, $q, twitterService, $http) {
     twitterService.initialize();
 
     //when the user clicks the connect twitter button, the popup authorization window opens
