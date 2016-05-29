@@ -14,7 +14,7 @@
   </div>
 
   <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav navbar-left">
+    <ul  ng-if="connected" class="nav navbar-nav navbar-left">
       <li><a class="navbar-brand" ng-href="/threads/{{ userid }}">  threads </a></li>
     </ul>
     <ul class="nav navbar-nav navbar-left">
@@ -24,7 +24,15 @@
       <li><a class="navbar-brand" href="/submissions/new">   submit </a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right login">
-      <li ><a class="navbar-brand" href="/login"> login </a></li>
+        <div  ng-if=" !connected " >
+            <li><a class="navbar-brand" href="/login"> login </a></li>
+        </div>
+        <div  ng-if=" connected " >
+            <li>
+                <a class="navbar-brand" href="/login">{{userName}} |</a>
+                <a class="navbar-brand" href="/login">logout</a>
+            </li>
+        </div>
     </ul>
   </div>
 </nav>

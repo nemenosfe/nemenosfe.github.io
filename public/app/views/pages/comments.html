@@ -1,6 +1,7 @@
 <div>
 	<div ng-repeat="comment in comments">
-      <h1 class="info"><a href="#" ng-click="likeComment(comment.id)" class="enFila"><img src= "../../../assets/images/up.png"></img></a>
+      <h1 class="info">
+		  <a  ng-if="connected" href="#" ng-click="likeComment(comment.id)" class="enFila"><img src= "../../../assets/images/up.png"></img></a>
           {{ comment.points }} points by
           <a ng-href="users/{{ comment.user_id }}">{{ comment.nom }}</a> <script> getTime({{comment.created_at}}) </script> hours ago</h1>
       <h1 class="titol"> {{ comment.text }} </h1>
