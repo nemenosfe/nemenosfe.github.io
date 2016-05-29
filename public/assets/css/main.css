@@ -1,15 +1,16 @@
 h1, h2, h3, h4, h5, h6 {
     font-family:  Verdana, Geneva, sans-serif;
+    margin-bottom: 2px;
 }
 h1.titol {
   font-size: 10pt;
   color: #000000;
-  margin: 0;
+  margin-top: 10px;
 }
 h1.info {
   font-size: 7pt;
   color: rgb(130, 130, 130);
-  margin-top: 0;
+  margin-top: 3px;
 }
 h1.num {
   font-size: 10pt;
@@ -25,6 +26,10 @@ h1.num {
     padding-bottom: 0;
     padding-right: 5px;
     padding-left: 5px;
+    width: auto;
+}
+.container-reply {
+    margin-left: 2em;
     width: auto;
 }
 
