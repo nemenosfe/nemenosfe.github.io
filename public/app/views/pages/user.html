@@ -12,24 +12,28 @@
       <h6 class="titol col-sm-3">{{ token }}</h6>
   </div>
   <form ng-submit="edit()">
-    <div class="row text-center">
+    <div ng-if="user.id==userid" class="row text-center">
         <h6 class="titol col-sm-2">about:</h6>
         <h6 class="titol col-sm-3" ng-model="subData.about"><textarea>{{user.about}}</textarea></h6>
     </div>
-    <div class="row text-center">
-        <div class="col-sm-2 col-sm-offset-2">
-          <input type="submit" name="addSubmission">
+    <div ng-if="user.id!=userid" class="row text-center">
+        <h6 class="titol col-sm-2">about:</h6>
+        <h6 class="titol col-sm-3" ng-model="subData.about">{{user.about}}</h6>
+    </div>
+    <div ng-if="user.id==userid" class="row text-center">
+        <div class="col-sm-3 col-sm-offset-2">
+          <input type="submit" name="addSubmission" value="Update About">
         </div>
     </div>
   </form>
   <br>
   <div class = "row text-center">
-      <div class="col-sm-2 col-sm-offset-2">
+      <div class="col-sm-3 col-sm-offset-2">
           <a ng-href="/users/{{ user.id }}/submissions"> Submissions </a>
       </div>
   </div>
   <div class = "row text-center">
-      <div class="col-sm-2 col-sm-offset-2">
+      <div class="col-sm-3 col-sm-offset-2">
           <a ng-href="/users/{{ user.id }}/comments">Comments </a>
       </div>
   </div>
