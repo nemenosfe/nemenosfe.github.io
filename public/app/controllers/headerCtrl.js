@@ -4,7 +4,7 @@ angular.module('headerCtrl', [])
 
     $scope.userid = $cookies.get('userid');
     $scope.userName = $cookies.get('userName');
-    $scope.connected = $cookies.get('userName');
+    $scope.connected = $cookies.get('connected');
     console.log($scope.connected+"****");
     console.log($scope.userName+"****");
 })
