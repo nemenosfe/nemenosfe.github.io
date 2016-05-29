@@ -64,7 +64,7 @@ angular.module('userCtrl', [])
 
 })
 
-.controller('userCtrl', function($http, $scope, $routeParams) {
+.controller('userCtrl', function($cookieStore, $cookies, $http, $scope, $routeParams) {
 
     $scope.user = {};
     $scope.token = $cookies.get('api_key');
