@@ -211,7 +211,7 @@ angular.module('submissionCtrl', [])
             })
             .success(function(data) {
               $scope.submission = data['id'];
-              console.log(data['id'])
+              console.log(data['id']);
             });
         }
         else($scope.subData.url != "") {
@@ -221,7 +221,7 @@ angular.module('submissionCtrl', [])
             })
             .success(function(data) {
                 $scope.submission = data['id'];
-                console.log(data['id'])
+                console.log(data['id']);
             });
         }
         $location.path("/submissions/" + $scope.submission);
