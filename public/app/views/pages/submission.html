@@ -22,8 +22,10 @@
         <br>
     </form>
   </div>
-  <div ng-if="connected=='false'">
-    <h2>Per comentar cal estar logejat!</h2>
+  <div class="container center-text" ng-if="connected=='false'">
+      <br>
+      <textarea  name="text" class="form-control" rows="4" ng-model="subData.text"></textarea>
+      <h1 class="notlogged">Per comentar cal estar logejat!</h2>
   </div>
     <div class="container" ng-repeat="comment in submission.comments">
         <h1 class="titol">

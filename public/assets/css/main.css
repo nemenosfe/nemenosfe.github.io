@@ -17,6 +17,11 @@ h1.num {
   color: rgb(130, 130, 130);
   margin: 0;
 }
+h1.notlogged {
+    font-size: 20pt;
+    color: #ff0000;
+    margin-top: 2px;
+}
 
 .container-main {
     background-color: #f0f3f1;
