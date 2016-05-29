@@ -5,6 +5,7 @@ angular.module('commentCtrl', [])
     $scope.comment = {};
     $scope.connected = $cookies.get('connected');
     $scope.token = $cookies.get('api_key');
+    $scope.commentData = {};
 
     $http.get('https://still-earth-13848.herokuapp.com/api/comments/' + $routeParams.id)
     .success(function(data) {
@@ -12,7 +13,7 @@ angular.module('commentCtrl', [])
     });
 
     $scope.newReply = function(text) {
-        $http.post('https://still-earth-13848.herokuapp.com/api/replies?text=' + text 
+        $http.post('https://still-earth-13848.herokuapp.com/api/replies?text=' + $scope.commentData.text 
             + '&comment_id=' + $routeParams.id, null, {
             headers: {'X-Api-Key': $scope.token}
         })
