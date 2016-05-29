@@ -161,7 +161,7 @@ angular.module('submissionCtrl', [])
     });
 
     $scope.likeSubmission = function() {
-        $http.put('https://still-earth-13848.herokuapp.com/api/submissions/' + $routeParams.id + '/like', {
+        $http.put('https://still-earth-13848.herokuapp.com/api/submissions/' + $routeParams.id + '/like',null , {
             headers: {'X-Api-Key': $scope.token}
         })
         .success (function(data){
@@ -182,11 +182,21 @@ angular.module('submissionCtrl', [])
   };
 
     $scope.likeComment = function(id) {
-        $http.put('https://still-earth-13848.herokuapp.com/api/comments/' + id + '/like');
+        $http.put('https://still-earth-13848.herokuapp.com/api/comments/' + id + '/like',null , {
+            headers: {'X-Api-Key': $scope.token}
+        })
+        .success (function(data){
+            //Refresh
+        });
     };
 
     $scope.likeReply = function(id) {
-        $http.put('https://still-earth-13848.herokuapp.com/api/replies/' + id + '/like');
+        $http.put('https://still-earth-13848.herokuapp.com/api/replies/' + id + '/like',null , {
+            headers: {'X-Api-Key': $scope.token}
+        })
+        .success (function(data){
+            //Refresh
+        });
     };
 
     $scope.getDate = function(createdat) {

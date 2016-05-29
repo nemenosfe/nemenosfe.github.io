@@ -21,7 +21,12 @@
       <div class="row text-center">
           <div class="col-sm-1 hide">or</div>
           <div class="col-sm-3">
-              <button type="submit"> Submit </button>
+              <div ng-if="connected=='true'">
+                  <button type="submit"> Submit </button>
+              </div>
+              <div ng-if="connected=='false'">
+                  <h1 class="notlogged">Per postejar cal estar logejat!</h2>
+              </div>
           </div>
       </div>
   </form>
