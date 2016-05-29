@@ -78,6 +78,7 @@ angular.module('userCtrl', [])
     });
 
     $scope.edit = function(about) {
+        console.log("Entro aqui");
         $http.put('https://still-earth-13848.herokuapp.com/api/users/' + $routeParams.id + '?about=' + $scope.subData.about, null, {
             headers: {'X-Api-Key': $scope.token}
         })
