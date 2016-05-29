@@ -210,16 +210,18 @@ angular.module('submissionCtrl', [])
                 headers: {'X-Api-Key': $scope.token}
             })
             .success(function(data) {
-                $scope.submission = data;
+              $scope.submission = data['id'];
+              console.log(data['id'])
             });
         }
-        else if($scope.subData.url != "") {
+        else($scope.subData.url != "") {
           console.log("segon post");
             $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + $scope.subData.title + '&text=' + $scope.subData.text, null, {
                 headers: {'X-Api-Key': $scope.token}
             })
             .success(function(data) {
                 $scope.submission = data['id'];
+                console.log(data['id'])
             });
         }
         $location.path("/submissions/" + $scope.submission);
