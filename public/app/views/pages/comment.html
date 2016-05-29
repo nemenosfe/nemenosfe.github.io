@@ -6,7 +6,7 @@
     <h1 class="titol"> {{ comment.text }}</h1>
   </div>
   <br>
-  <div>
+  <div ng-if="connected=='true'">
     <form ng-submit="newReply()" class="form-group">
       <br>
       <textarea class="form-control" rows="3" ng-model="commentData.text"></textarea>
