@@ -8,4 +8,3 @@ angular.module('headerCtrl', [])
     console.log($scope.connected+"****");
     console.log($scope.userName+"****");
 })
-

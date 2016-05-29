@@ -2,7 +2,7 @@
 <div class="container">
   <div>
 
-    <h1 class="titol"><a ng-if="connected" href="#" ng-click="likeSubmission()" class="enFila"><img src= "../../../assets/images/up.png"></img></a>
+    <h1 class="titol"><a ng-if="connected=='true'" href="#" ng-click="likeSubmission()" class="enFila"><img src= "../../../assets/images/up.png"></img></a>
         {{ submission.title }}
     </h1>
     <h1 class="info">
@@ -22,7 +22,7 @@
   <div>
     <div ng-repeat="comment in submission.comments">
         <h1 class="titol">
-            <a ng-if="connected" href="#" ng-click="likeComment(comment.id)" class="enFila"><img src= "../../../assets/images/up.png"></img></a>
+            <a ng-if="connected=='true'" href="#" ng-click="likeComment(comment.id)" class="enFila"><img src= "../../../assets/images/up.png"></img></a>
             {{ comment.text }}
         </h1>
       <h1 class="info">
@@ -33,7 +33,7 @@
 
       <div class="container-reply" ng-repeat="reply in comment.replies">
           <h1 class="titol">
-              <a ng-if="connected" href="#" ng-click="likeReply(reply.id)" class="enFila"><img src= "../../../assets/images/up.png"></img></a>
+              <a ng-if="connected=='true'" href="#" ng-click="likeReply(reply.id)" class="enFila"><img src= "../../../assets/images/up.png"></img></a>
               {{ reply.text }} </h1>
         <h1 class="info">
             {{ reply.points }} points by

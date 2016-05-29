@@ -2,7 +2,7 @@
   <div ng-repeat="submission in submissions">
     <div class = "container">
       <h1 class="num enFila"> {{$index + 1}}. </h1>
-      <a ng-if="connected" href="#" ng-click="likeSubmission(submission.id)" class="enFila"><img src= "../../../assets/images/up.png"></img></a>
+      <a ng-if="connected=='true'" href="#" ng-click="likeSubmission(submission.id)" class="enFila"><img src= "../../../assets/images/up.png"></img></a>
       <a ng-if="!submission.url" ng-href="/submissions/{{ submission.id }}" class="enFila"><h1 class = "titol"> {{ submission.title }}</h1></a>
       <a ng-if="submission.url" ng-href="{{ submission.url }}" class="enFila"><h1 class = "titol"> {{ submission.title }} ({{ submission.url }})</h1></a>
     </div>
