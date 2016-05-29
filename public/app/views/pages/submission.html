@@ -20,7 +20,7 @@
       <button type="submit" class="btn btn-default">Add Coment</button>  </div>
       <br>
   <form>
-    <div ng-repeat="comment in submission.comments">
+    <div class="container" ng-repeat="comment in submission.comments">
         <h1 class="titol">
             <a ng-if="connected=='true'" href="#" ng-click="likeComment(comment.id)" class="enFila"><img src= "../../../assets/images/up.png"></img></a>
             {{ comment.text }}
