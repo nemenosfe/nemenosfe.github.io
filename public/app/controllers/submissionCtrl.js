@@ -193,29 +193,36 @@ angular.module('submissionCtrl', [])
 
 })
 
-.controller('newSubmissionCtrl', function($scope, $rootScope, $http, $location) {
+.controller('newSubmissionCtrl', function($scope, $http, $location, $routeParams, $cookies, $cookieStore) {
 
     $scope.submission = {};
     $scope.subData = {};
 
+    $scope.connected = $cookies.get('connected');
+    $scope.token = $cookies.get('api_key');
+
+
     $scope.postNew = function() {
-        if(!text) {
-            $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + $scope.subData.title + '&url=' + $scope.subData.url, {
-                headers: {'X-Api-Key': $rootScope.token}
+      console.log($scope.token);
+        if($scope.subData.text != "") {
+          console.log("primer post");
+            $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + $scope.subData.title + '&url=' + $scope.subData.url, null, {
+                headers: {'X-Api-Key': $scope.token}
             })
             .success(function(data) {
                 $scope.submission = data;
             });
         }
-        else if(!url) {
-            $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + $scope.subData.title + '&text=' + $scope.subData.text, {
-                headers: {'X-Api-Key': $rootScope.token}
+        else if($scope.subData.url != "") {
+          console.log("segon post");
+            $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + $scope.subData.title + '&text=' + $scope.subData.text, null, {
+                headers: {'X-Api-Key': $scope.token}
             })
             .success(function(data) {
-                $scope.submission = data;
+                $scope.submission = data['id'];
             });
         }
-        $location.path("/submissions/" + $scope.submission.id);
+        $location.path("/submissions/" + $scope.submission);
     };
 
 });
