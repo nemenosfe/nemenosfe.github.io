@@ -30,7 +30,7 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
             .success(function(data) {
                 console.log(data['api_key']);
                 $cookies.put('api_key', data['api_key']);
-                $cookies.put('userid', data['id'];
+                $cookies.put('userid', data['id']);
                 $cookies.put('connected', true);
                 $cookies.put('userNname', $scope.name);
                 $rootScope.connected = $cookies.get('connected');
