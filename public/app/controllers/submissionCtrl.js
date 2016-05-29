@@ -5,7 +5,7 @@ angular.module('submissionCtrl', [])
     $scope.submissions = {};
     $scope.size = {};
     $scope.connected = $cookies.get('connected');
-    $scope.token = $coookies.get('api_key');
+    $scope.token = $cookies.get('api_key');
 
     $http.get('https://still-earth-13848.herokuapp.com/api/submissions')
     .success(function(data) {
@@ -14,7 +14,9 @@ angular.module('submissionCtrl', [])
     });
 
     $scope.likeSubmission = function(id) {
-        $http.put('https://still-earth-13848.herokuapp.com/api/submissions/' + id + '/like', {
+        console.log("Id:"+id);
+        console.log("apikey:"+$scope.token);
+        $http.put('https://still-earth-13848.herokuapp.com/api/submissions/' + id + '/like',null , {
             headers: {'X-Api-Key': $scope.token}
         })
         .success (function(data){
