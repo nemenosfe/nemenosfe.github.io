@@ -200,9 +200,10 @@ angular.module('submissionCtrl', [])
 
     $scope.connected = $cookies.get('connected');
     $scope.token = $cookies.get('api_key');
-    console.log($scope.token);
+
 
     $scope.postNew = function() {
+      console.log($scope.token);
         if(!$scope.subData.text) {
             $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + $scope.subData.title + '&url=' + $scope.subData.url, {
                 headers: {'X-Api-Key': $scope.token}
