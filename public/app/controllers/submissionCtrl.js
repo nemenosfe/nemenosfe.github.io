@@ -17,13 +17,11 @@ angular.module('submissionCtrl', [])
     });
 
     $scope.likeSubmission = function(id) {
-        console.log("Id:"+id);
-        console.log("apikey:"+$scope.token);
         $http.put('https://still-earth-13848.herokuapp.com/api/submissions/' + id + '/like',null , {
             headers: {'X-Api-Key': $scope.token}
         })
         .success (function(data){
-            //Refresh
+            $window.location.reload();
         });
     };
 
@@ -82,7 +80,7 @@ angular.module('submissionCtrl', [])
             headers: {'X-Api-Key': $scope.token}
         })
         .success (function(data){
-            //Refresh
+            $window.location.reload();
         });
     };
 
@@ -168,8 +166,7 @@ angular.module('submissionCtrl', [])
             headers: {'X-Api-Key': $scope.token}
         })
         .success (function(data){
-            //Refresh
-            $scope.$apply();
+            $window.location.reload();
         });
     };
 
@@ -178,8 +175,7 @@ angular.module('submissionCtrl', [])
           headers: {'X-Api-Key': $scope.token}
         })
     .success(function(data){
-        $scope.$apply();
-      //$window.location.reload();
+        $window.location.reload();
 
     });
   };
@@ -189,7 +185,7 @@ angular.module('submissionCtrl', [])
             headers: {'X-Api-Key': $scope.token}
         })
         .success (function(data){
-            //Refresh
+            $window.location.reload();
         });
     };
 
@@ -198,7 +194,7 @@ angular.module('submissionCtrl', [])
             headers: {'X-Api-Key': $scope.token}
         })
         .success (function(data){
-            //Refresh
+            $window.location.reload();
         });
     };
 
@@ -227,7 +223,7 @@ angular.module('submissionCtrl', [])
             headers: {'X-Api-Key': $scope.token}
         })
         .success (function(data){
-            //Refresh
+            $window.location.reload();
         });
     };
 
@@ -281,8 +277,6 @@ angular.module('submissionCtrl', [])
             })
             .success(function(data) {
               $location.path("/submissions/" + data['id']);
-              console.log(data['id']);
-              console.log($scope.submission);
             });
         }
         else{
@@ -292,8 +286,6 @@ angular.module('submissionCtrl', [])
             })
             .success(function(data) {
                 $location.path("/submissions/" + data['id']);
-                console.log(data['id']);
-                console.log($scope.submission);
             });
         }
     };

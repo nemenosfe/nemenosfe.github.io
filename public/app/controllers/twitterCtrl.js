@@ -25,8 +25,6 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
             $scope.id = data.id;
             $scope.screen_name = data.screen_name;
             $scope.name = data.name;
-            console.log("Id: " + $scope.id);
-            console.log("Name: " + $scope.screen_name);
             $http.post('https://still-earth-13848.herokuapp.com/api/login?uid=' + $scope.id + '&name=' + $scope.screen_name)
             .success(function(data) {
                 console.log(data['api_key']);
@@ -35,10 +33,6 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
                 $cookies.put('connected', true);
                 $cookies.put('userName', $scope.name);
                 $window.location.reload();
-                console.log($cookies.get('api_key'));
-                console.log($cookies.get('connected'));
-                console.log($cookies.get('userName'));
-                console.log($cookies.get('userid'));
             })
         })
     }
@@ -55,10 +49,6 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
                 $cookies.put('connected', false);
                 $cookies.put('userName', null);
                 $window.location.reload();
-                console.log($cookies.get('api_key'));
-                console.log($cookies.get('connected'));
-                console.log($cookies.get('userName'));
-                console.log($cookies.get('userid'));
             })
         });
     }
