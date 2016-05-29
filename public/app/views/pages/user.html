@@ -17,7 +17,7 @@
   <form ng-submit="edit()">
     <div ng-if="user.id==userid" class="row text-center">
         <h6 class="titol col-sm-2">about:</h6>
-        <h6 class="titol col-sm-3" ><textarea ng-model="subData.about">{{user.about}}</textarea></h6>
+        <h6 class="titol col-sm-3" ><textarea ng-model="subData.about" value="{{user.about}}"></textarea></h6>
     </div>
     <div ng-if="user.id!=userid" class="row text-center">
         <h6 class="titol col-sm-2">about:</h6>
