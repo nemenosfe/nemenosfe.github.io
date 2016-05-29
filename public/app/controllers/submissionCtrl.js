@@ -202,7 +202,7 @@ angular.module('submissionCtrl', [])
     $scope.token = $cookies.get('token');
 
     $scope.postNew = function() {
-        if(!text) {
+        if(!$scope.subData.text) {
             $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + $scope.subData.title + '&url=' + $scope.subData.url, {
                 headers: {'X-Api-Key': $scope.token}
             })
@@ -210,7 +210,7 @@ angular.module('submissionCtrl', [])
                 $scope.submission = data;
             });
         }
-        else if(!url) {
+        else if(!$scope.subData.url) {
             $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + $scope.subData.title + '&text=' + $scope.subData.text, {
                 headers: {'X-Api-Key': $rootScope.token}
             })
