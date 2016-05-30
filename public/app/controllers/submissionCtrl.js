@@ -174,7 +174,6 @@ angular.module('submissionCtrl', [])
         })
     .success(function(data){
         $window.location.reload();
-
     });
   };
 

@@ -1,6 +1,6 @@
 angular.module('commentCtrl', [])
 
-.controller('commentCtrl', function($cookies, $cookieStore, $scope, $http, $routeParams, $window) {
+.controller('commentCtrl', function($cookies, $cookieStore, $scope, $http, $routeParams, $location) {
 
     $scope.comment = {};
     $scope.connected = $cookies.get('connected');
@@ -17,7 +17,7 @@ angular.module('commentCtrl', [])
             headers: {'X-Api-Key': $scope.token}
         })
         .success(function(data){
-            $window.location.reload();
+            //$location.path('/submissions/' + data.submission_id);
         });
 
     };
