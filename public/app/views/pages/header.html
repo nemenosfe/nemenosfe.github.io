@@ -24,15 +24,17 @@
       <li><a class="navbar-brand" href="/submissions/new">   submit </a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right login">
-        <div  ng-if=" connected=='false'" >
-            <li><a class="navbar-brand" href="/login" id="loginlogout"> login </a></li>
-        </div>
-        <div  ng-if=" connected=='true' " >
-            <li>
-                <a class="navbar-brand" ng-href="/users/{{userid}}">{{userName}} |</a>
-                <a class="navbar-brand" href="/login" id="loginlogout">logout</a>
-            </li>
-        </div>
+        <li ng-if=" connected=='false'" ><a class="navbar-brand" href="/login" id="loginlogout"> login </a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right login ">
+        <li ng-if=" connected=='true' ">
+            <a class="navbar-brand enFila" href="/login" id="loginlogout">logout</a>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right login ">
+        <li ng-if=" connected=='true' ">
+            <a class="navbar-brand enFila" ng-href="/users/{{userid}}">{{userName}}</a>
+        </li>
     </ul>
   </div>
 </nav>
