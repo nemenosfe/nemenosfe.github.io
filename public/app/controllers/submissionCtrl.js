@@ -1,6 +1,6 @@
 angular.module('submissionCtrl', [])
 
-.controller('submissionCtrl', function($cookies, $cookieStore, $scope, $http) {
+.controller('submissionCtrl', function($cookies, $cookieStore, $scope, $http, $window) {
 
     $scope.submissions = {};
     $scope.size = {};
