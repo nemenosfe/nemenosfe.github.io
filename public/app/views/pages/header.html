@@ -24,11 +24,11 @@
       <li><a class="navbar-brand" href="/submissions/new">   submit </a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right login">
-        <li ng-if=" connected=='false'" ><a class="navbar-brand" href="/login" id="loginlogout"> login </a></li>
+        <li ng-if=" connected=='false'" ><a class="navbar-brand" href="#" ng-click="connectButton()" id="connectButton"> login </a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right login ">
         <li ng-if=" connected=='true' ">
-            <a class="navbar-brand enFila" href="/login" id="loginlogout">logout</a>
+            <a class="navbar-brand enFila" href="#" ng-click="signOut()" id="signOut">logout</a>
         </li>
     </ul>
     <ul class="nav navbar-nav navbar-right login ">

@@ -1,3 +1,2 @@
 angular.module('jooxAngular',['app.routes', 'commentCtrl',
-'submissionCtrl', 'userCtrl', 'ngSanitize', 
-'twitterCtrl', 'ngCookies', 'headerCtrl'])
+'submissionCtrl', 'userCtrl', 'ngSanitize', 'ngCookies', 'headerCtrl'])

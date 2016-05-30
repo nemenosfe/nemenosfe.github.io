@@ -32,38 +32,41 @@ angular.module('userCtrl', [])
         });
     };
     $scope.getTime = function(date) {
-        var d = new Date(date.substring(0,4),(date.substring(5,7))-1,date.substring(8,10),date.substring(11,13),date.substring(14,16),date.substring(17,19),date.substring(20,23));
+        if(!angular.isUndefined(date)) {
+            var d = new Date(date.substring(0,4),(date.substring(5,7))-1,date.substring(8,10),date.substring(11,13),date.substring(14,16),date.substring(17,19),date.substring(20,23));
 
-        var seconds = Math.floor((new Date() - d) / 1000);
+            var seconds = Math.floor((new Date() - d) / 1000);
 
-        var interval = Math.floor(seconds / 31536000);
+            var interval = Math.floor(seconds / 31536000);
 
-        if (interval > 1) {
-            return interval + " years";
-        }
-        interval = Math.floor(seconds / 2592000);
-        if (interval > 1) {
-            return interval + " months";
-        }
-        interval = Math.floor(seconds / 86400);
-        if (interval > 1) {
-            return interval + " days";
-        }
-        interval = Math.floor(seconds / 3600);
-        if (interval > 1) {
-            return interval + " hours";
-        }
-        interval = Math.floor(seconds / 60);
-        if (interval > 1) {
-            return interval + " minutes";
-        }
+            if (interval > 1) {
+                return interval + " years";
+            }
+            interval = Math.floor(seconds / 2592000);
+            if (interval > 1) {
+                return interval + " months";
+            }
+            interval = Math.floor(seconds / 86400);
+            if (interval > 1) {
+                return interval + " days";
+            }
+            interval = Math.floor(seconds / 3600);
+            if (interval > 1) {
+                return interval + " hours";
+            }
+            interval = Math.floor(seconds / 60);
+            if (interval > 1) {
+                return interval + " minutes";
+            }
 
-        return Math.floor(seconds) + " seconds";
+            return Math.floor(seconds) + " seconds";
+        }
+        return "error";
     };
 
 })
 
-.controller('userCtrl', function($cookieStore, $cookies, $http, $scope, $routeParams) {
+.controller('userCtrl', function($cookieStore, $cookies, $http, $scope, $routeParams, $window) {
 
     $scope.user = {};
     $scope.token = $cookies.get('api_key');
@@ -81,36 +84,39 @@ angular.module('userCtrl', [])
             headers: {'X-Api-Key': $scope.token}
         })
         .success(function(data){
-
+            $window.location.reload();
         });
     };
     $scope.getTime = function(date) {
-        var d = new Date(date.substring(0,4),(date.substring(5,7))-1,date.substring(8,10),date.substring(11,13),date.substring(14,16),date.substring(17,19),date.substring(20,23));
+        if(!angular.isUndefined(date)) {
+            var d = new Date(date.substring(0,4),(date.substring(5,7))-1,date.substring(8,10),date.substring(11,13),date.substring(14,16),date.substring(17,19),date.substring(20,23));
 
-        var seconds = Math.floor((new Date() - d) / 1000);
+            var seconds = Math.floor((new Date() - d) / 1000);
 
-        var interval = Math.floor(seconds / 31536000);
+            var interval = Math.floor(seconds / 31536000);
 
-        if (interval > 1) {
-            return interval + " years";
-        }
-        interval = Math.floor(seconds / 2592000);
-        if (interval > 1) {
-            return interval + " months";
-        }
-        interval = Math.floor(seconds / 86400);
-        if (interval > 1) {
-            return interval + " days";
-        }
-        interval = Math.floor(seconds / 3600);
-        if (interval > 1) {
-            return interval + " hours";
-        }
-        interval = Math.floor(seconds / 60);
-        if (interval > 1) {
-            return interval + " minutes";
-        }
+            if (interval > 1) {
+                return interval + " years";
+            }
+            interval = Math.floor(seconds / 2592000);
+            if (interval > 1) {
+                return interval + " months";
+            }
+            interval = Math.floor(seconds / 86400);
+            if (interval > 1) {
+                return interval + " days";
+            }
+            interval = Math.floor(seconds / 3600);
+            if (interval > 1) {
+                return interval + " hours";
+            }
+            interval = Math.floor(seconds / 60);
+            if (interval > 1) {
+                return interval + " minutes";
+            }
 
-        return Math.floor(seconds) + " seconds";
+            return Math.floor(seconds) + " seconds";
+        }
+        return "error";
     };
 });
