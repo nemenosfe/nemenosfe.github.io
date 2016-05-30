@@ -17,9 +17,9 @@ angular.module('commentCtrl', [])
             headers: {'X-Api-Key': $scope.token}
         })
         .success(function(data){
-            $location.path('/submissions/' + data.submission_id);
+            console.log(data);
+            $location.path("/submissions/" + data['submission_id']);
         });
-
     };
 
     $scope.getTime = function(date) {
