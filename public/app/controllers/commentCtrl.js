@@ -1,6 +1,6 @@
 angular.module('commentCtrl', [])
 
-.controller('commentCtrl', function($cookies, $cookieStore, $scope, $http, $routeParams) {
+.controller('commentCtrl', function($cookies, $cookieStore, $scope, $http, $routeParams, $window) {
 
     $scope.comment = {};
     $scope.connected = $cookies.get('connected');
@@ -17,7 +17,7 @@ angular.module('commentCtrl', [])
             headers: {'X-Api-Key': $scope.token}
         })
         .success(function(data){
-
+            $window.location.reload();
         });
 
     };
@@ -59,7 +59,7 @@ angular.module('commentCtrl', [])
 
     $scope.connected = $cookies.get('connected');
     $scope.token = $cookies.get('api_key');
-    
+
     $scope.likeComment = function(id) {
         $http.put('https://still-earth-13848.herokuapp.com/api/comments/' + id + '/like',null , {
             headers: {'X-Api-Key': $scope.token}
