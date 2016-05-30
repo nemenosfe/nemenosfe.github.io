@@ -27,7 +27,6 @@ angular.module('twitterCtrl', ['jooxAngular.services'])
             $scope.name = data.name;
             $http.post('https://still-earth-13848.herokuapp.com/api/login?uid=' + $scope.id + '&name=' + $scope.screen_name)
             .success(function(data) {
-                console.log(data['api_key']);
                 $cookies.put('api_key', data['api_key']);
                 $cookies.put('userid', data['id']);
                 $cookies.put('connected', true);

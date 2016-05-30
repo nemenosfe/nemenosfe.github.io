@@ -7,7 +7,6 @@ angular.module('userCtrl', [])
     $scope.userName = $cookies.get('userName');
     $scope.userid = $cookies.get('userid');
     $scope.connected = $cookies.get('connected');
-    console.log($rootScope.token);
     $http.get('https://still-earth-13848.herokuapp.com/api/threads/' + $routeParams.id, {
         headers: {'X-Api-Key': $scope.token}
     })
@@ -78,7 +77,6 @@ angular.module('userCtrl', [])
     });
 
     $scope.edit = function(about) {
-        console.log("Entro aqui");
         $http.put('https://still-earth-13848.herokuapp.com/api/users/' + $routeParams.id + '?about=' + $scope.subData.about, null, {
             headers: {'X-Api-Key': $scope.token}
         })

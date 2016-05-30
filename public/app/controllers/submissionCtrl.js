@@ -74,8 +74,6 @@ angular.module('submissionCtrl', [])
     });
 
     $scope.likeSubmission = function(id) {
-        console.log("Id:"+id);
-        console.log("apikey:"+$scope.token);
         $http.put('https://still-earth-13848.herokuapp.com/api/submissions/' + id + '/like',null , {
             headers: {'X-Api-Key': $scope.token}
         })
@@ -217,8 +215,6 @@ angular.module('submissionCtrl', [])
     });
 
     $scope.likeSubmission = function(id) {
-        console.log("Id:"+id);
-        console.log("apikey:"+$scope.token);
         $http.put('https://still-earth-13848.herokuapp.com/api/submissions/' + id + '/like',null , {
             headers: {'X-Api-Key': $scope.token}
         })
@@ -268,10 +264,7 @@ angular.module('submissionCtrl', [])
 
 
     $scope.postNew = function() {
-      console.log($scope.token);
-      console.log($scope.subData.text);
         if(angular.isUndefined($scope.subData.text)) {
-          console.log("primer post");
             $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + $scope.subData.title + '&url=' + $scope.subData.url, null, {
                 headers: {'X-Api-Key': $scope.token}
             })
@@ -280,7 +273,6 @@ angular.module('submissionCtrl', [])
             });
         }
         else{
-          console.log("segon post");
             $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + $scope.subData.title + '&text=' + $scope.subData.text, null, {
                 headers: {'X-Api-Key': $scope.token}
             })
