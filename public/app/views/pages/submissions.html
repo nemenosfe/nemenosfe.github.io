@@ -9,8 +9,8 @@
 
     <div class="container">
       <h1 class = "info enFila"> {{ submission.points }} points by </h1>
-      <a ng-href="/users/{{ submission.user_id }}" ><h1 class = "info enFila"> {{submission.nom}}</h1>
-      <a href="#" ><h1 class = "info enFila"> {{getTime(submission.created_at)}} ago </h1>
+      <a ng-href="/users/{{ submission.user_id }}" ><h1 class = "info enFila"> {{submission.nom}}</h1></a>
+      <h1 class = "info enFila"> {{getTime(submission.created_at)}} ago </h1>
       <a ng-href="/submissions/{{ submission.id }}"><h1 class ="info enFila"> | {{submission.numComments}} comments</h1></a>
     </div>
   </div>

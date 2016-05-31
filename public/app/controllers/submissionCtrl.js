@@ -60,7 +60,7 @@ angular.module('submissionCtrl', [])
 
 })
 
-.controller('askCtrl', function($cookies, $cookieStore, $scope, $http) {
+.controller('askCtrl', function($cookies, $cookieStore, $scope, $http, $window) {
 
     $scope.ask = {};
     $scope.size = {};
@@ -211,7 +211,7 @@ angular.module('submissionCtrl', [])
 
 })
 
-.controller('userSubmissionsCtrl', function($cookies, $cookieStore, $http, $scope, $routeParams) {
+.controller('userSubmissionsCtrl', function($cookies, $cookieStore, $http, $scope, $routeParams, $window) {
 
     $scope.submissions = {};
 

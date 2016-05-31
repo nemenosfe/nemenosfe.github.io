@@ -56,7 +56,7 @@ angular.module('commentCtrl', [])
     };
 })
 
-.controller('userCommentsCtrl', function($cookies, $cookieStore, $http, $scope, $routeParams) {
+.controller('userCommentsCtrl', function($cookies, $cookieStore, $http, $scope, $routeParams, $window) {
 
     $scope.comments = {};
 
@@ -68,7 +68,7 @@ angular.module('commentCtrl', [])
             headers: {'X-Api-Key': $scope.token}
         })
         .success (function(data){
-            //Refresh
+            $window.location.reload();
         });
     };
 

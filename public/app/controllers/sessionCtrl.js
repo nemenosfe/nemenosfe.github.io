@@ -1,6 +1,6 @@
-angular.module('headerCtrl', ['jooxAngular.services'])
+angular.module('sessionCtrl', ['jooxAngular.services'])
 
-.controller('headerCtrl', function($scope, $http, $routeParams, $cookies, $cookieStore, $window, $location, $rootScope, $q, twitterService) {
+.controller('sessionCtrl', function($scope, $http, $routeParams, $cookies, $cookieStore, $window, $location, $rootScope, $q, twitterService) {
 
     twitterService.initialize();
 

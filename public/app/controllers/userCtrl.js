@@ -1,6 +1,6 @@
 angular.module('userCtrl', [])
 
-.controller('threadsCtrl', function($cookieStore, $cookies, $http, $scope, $routeParams, $rootScope) {
+.controller('threadsCtrl', function($cookieStore, $cookies, $http, $scope, $routeParams, $rootScope, $window) {
 
     $scope.threads = {};
     $scope.token = $cookies.get('api_key');
@@ -19,7 +19,7 @@ angular.module('userCtrl', [])
             headers: {'X-Api-Key': $scope.token}
         })
         .success (function(data){
-            //Refresh
+            $window.location.reload();
         });
     };
 
@@ -28,7 +28,7 @@ angular.module('userCtrl', [])
             headers: {'X-Api-Key': $scope.token}
         })
         .success (function(data){
-            //Refresh
+            $window.location.reload();
         });
     };
     $scope.getTime = function(date) {
