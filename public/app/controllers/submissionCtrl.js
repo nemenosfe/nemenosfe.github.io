@@ -277,15 +277,7 @@ angular.module('submissionCtrl', [])
 
 
     $scope.postNew = function() {
-        if ((angular.isUndefined($scope.subData.text) or ($scope.subData.text == "")) and 
-            (angular.isUndefined($scope.subData.url) or ($scope.subData.url == ""))) {
-            console.log("1"+$scope.subData.text);
-            console.log("1"+$scope.subData.url);
-            document.findElementById("#errorCamp").innerHTML = "Error creant la submission";
-        }
-        else if(angular.isUndefined($scope.subData.text) or ($scope.subData.text == "")) {
-            console.log("1"+$scope.subData.text);
-            console.log("1"+$scope.subData.url);
+        if(angular.isUndefined($scope.subData.text)) {
             $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + $scope.subData.title + '&url=' + $scope.subData.url, null, {
                 headers: {'X-Api-Key': $scope.token}
             })
@@ -294,8 +286,6 @@ angular.module('submissionCtrl', [])
             });
         }
         else{
-            console.log("1"+$scope.subData.text);
-            console.log("1"+$scope.subData.url);
             $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + $scope.subData.title + '&text=' + $scope.subData.text, null, {
                 headers: {'X-Api-Key': $scope.token}
             })
