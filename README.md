@@ -1,4 +1,9 @@
-JOOX NEWS
+╋╋┏┓┏━━━┓┏━━━┓┏━┓┏━┓╋╋╋╋┏━┓╋┏┓┏━━━┓┏┓┏┓┏┓┏━━━┓
+╋╋┃┃┃┏━┓┃┃┏━┓┃┗┓┗┛┏┛╋╋╋╋┃┃┗┓┃┃┃┏━━┛┃┃┃┃┃┃┃┏━┓┃
+╋╋┃┃┃┃╋┃┃┃┃╋┃┃╋┗┓┏┛╋╋╋╋╋┃┏┓┗┛┃┃┗━━┓┃┃┃┃┃┃┃┗━━┓
+┏┓┃┃┃┃╋┃┃┃┃╋┃┃╋┏┛┗┓╋┏━━┓┃┃┗┓┃┃┃┏━━┛┃┗┛┗┛┃┗━━┓┃
+┃┗┛┃┃┗━┛┃┃┗━┛┃┏┛┏┓┗┓┗━━┛┃┃╋┃┃┃┃┗━━┓┗┓┏┓┏┛┃┗━┛┃
+┗━━┛┗━━━┛┗━━━┛┗━┛┗━┛╋╋╋╋┗┛╋┗━┛┗━━━┛╋┗┛┗┛╋┗━━━┛
 ---
 Estudiants que participem en el projecte: 
 
@@ -7,4 +12,9 @@ Estudiants que participem en el projecte:
 - Jaume Lladó 
 - Octavi Prats
 
-Link a [Wiki]
+Link a [Wiki de la Api](https://bitbucket.org/xalgarra/joox_news/wiki/Home)
+
+Link a [Wiki aplicacio Angular](https://github.com/nemenosfe/nemenosfe.github.io/wiki)
+
+Link a [Heroku](https://still-earth-13848.herokuapp.com)
+
