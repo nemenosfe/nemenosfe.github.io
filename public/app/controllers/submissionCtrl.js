@@ -277,6 +277,8 @@ angular.module('submissionCtrl', [])
 
 
     $scope.postNew = function() {
+        console.log($scope.subData.text);
+        console.log($scope.subData.url);
         if ((angular.isUndefined($scope.subData.text) or ($scope.subData.text == "")) and 
             (angular.isUndefined($scope.subData.url) or ($scope.subData.url == ""))) {
             document.findElementById("#errorCamp").innerHTML = "Error creant la submission";
