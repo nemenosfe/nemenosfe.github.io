@@ -234,6 +234,7 @@ angular.module('submissionCtrl', [])
 
     $scope.getTime = function(date) {
         if(!angular.isUndefined(date)) {
+            console.log(date);
             var d = new Date(date.substring(0,4),(date.substring(5,7))-1,date.substring(8,10),date.substring(11,13),date.substring(14,16),date.substring(17,19),date.substring(20,23));
 
             var seconds = Math.floor((new Date() - d) / 1000);
