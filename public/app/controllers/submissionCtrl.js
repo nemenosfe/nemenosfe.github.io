@@ -276,9 +276,9 @@ angular.module('submissionCtrl', [])
         console.log("title"+$scope.subData.title);
         console.log("text"+$scope.subData.text);
         console.log("url"+$scope.subData.url);
-        if (((angular.isUndefined($scope.subData.title))or($scope.subData.title == ""))or((angular.isUndefined($scope.subData.text))or($scope.subData.text == ""))and(angular.isUndefined($scope.subData.url)or($scope.subData.url == ""))) {
+        /*if (((angular.isUndefined($scope.subData.title))or($scope.subData.title == ""))or((angular.isUndefined($scope.subData.text))or($scope.subData.text == ""))and(angular.isUndefined($scope.subData.url)or($scope.subData.url == ""))) {
             document.findElementById("#errorCamp").innerHTML = "No pos crear la submission buida";
-        }
+        }*/
         else if(angular.isUndefined($scope.subData.text)) {
             $http.post('https://still-earth-13848.herokuapp.com/api/submissions?title=' + $scope.subData.title + '&url=' + $scope.subData.url, null, {
                 headers: {'X-Api-Key': $scope.token}
