@@ -23,3 +23,5 @@ Link a: [Heroku](https://still-earth-13848.herokuapp.com)
 
 Link a: [Aplicació Angular](http://146.185.134.207:8080/)
 
+Link a: [Tercer lliurament](https://github.com/nemenosfe/nemenosfe.github.io/blob/master/public/assets/docs/documentacio.pdf)
+
